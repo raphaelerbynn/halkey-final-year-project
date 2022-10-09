@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "HALKEY": {
+      "commandName": "Project",
+      "sqlDebugging": true,
+      "nativeDebugging": true
+    }
+  }
+}
