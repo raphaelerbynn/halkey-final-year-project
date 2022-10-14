@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace HALKEY.Pages
 {
-    public partial class StudentModule : Form
+    public partial class RoomModule : Form
     {
-        public StudentModule()
+        public RoomModule()
         {
             InitializeComponent();
-        }
-
-        private void addStudentLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            OpenNewPage onp = new OpenNewPage();
-            onp.OpenChildForm(new AddStudent(), bgPanel);
         }
     }
 }

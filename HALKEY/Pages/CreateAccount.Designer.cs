@@ -118,7 +118,7 @@
             this.singUpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(115)))), ((int)(((byte)(179)))));
             this.singUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.singUpBtn.ForeColor = System.Drawing.Color.White;
-            this.singUpBtn.Location = new System.Drawing.Point(392, 379);
+            this.singUpBtn.Location = new System.Drawing.Point(341, 380);
             this.singUpBtn.Name = "singUpBtn";
             this.singUpBtn.Size = new System.Drawing.Size(75, 23);
             this.singUpBtn.TabIndex = 22;

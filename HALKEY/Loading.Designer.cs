@@ -144,6 +144,7 @@
             // loadTimer
             // 
             this.loadTimer.Enabled = true;
+            this.loadTimer.Interval = 50;
             this.loadTimer.Tick += new System.EventHandler(this.loadTimer_Tick);
             // 
             // Loading
