@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.student_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,12 +39,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.studentDV = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.view = new System.Windows.Forms.DataGridViewImageColumn();
-            this.update = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.searchBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPostG = new System.Windows.Forms.Button();
@@ -55,6 +51,14 @@
             this.addStudentLink = new System.Windows.Forms.LinkLabel();
             this.searchTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.stnt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stnt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stnt_level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stnt_room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.view = new System.Windows.Forms.DataGridViewImageColumn();
+            this.update = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDV)).BeginInit();
             this.panel1.SuspendLayout();
@@ -131,22 +135,33 @@
             this.studentDV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.studentDV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.studentDV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.studentDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.studentDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studentDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
+            this.stnt_id,
+            this.stnt_name,
+            this.stnt_level,
+            this.stnt_room,
+            this.category,
             this.view,
             this.update,
             this.delete});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.studentDV.DefaultCellStyle = dataGridViewCellStyle3;
             this.studentDV.EnableHeadersVisualStyles = false;
             this.studentDV.Location = new System.Drawing.Point(189, 120);
             this.studentDV.Name = "studentDV";
@@ -154,49 +169,9 @@
             this.studentDV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.studentDV.RowHeadersVisible = false;
             this.studentDV.RowTemplate.Height = 25;
+            this.studentDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.studentDV.Size = new System.Drawing.Size(724, 476);
             this.studentDV.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "NAME";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.HeaderText = "LEVEL";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 78;
-            // 
-            // view
-            // 
-            this.view.HeaderText = "";
-            this.view.Name = "view";
-            this.view.ReadOnly = true;
-            // 
-            // update
-            // 
-            this.update.HeaderText = "";
-            this.update.Name = "update";
-            this.update.ReadOnly = true;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
             // 
             // searchBtn
             // 
@@ -214,6 +189,7 @@
             this.searchBtn.TabIndex = 13;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // panel1
             // 
@@ -246,6 +222,7 @@
             this.btnPostG.TabIndex = 6;
             this.btnPostG.Text = "Postgraduate";
             this.btnPostG.UseVisualStyleBackColor = false;
+            this.btnPostG.Click += new System.EventHandler(this.btnPostG_Click);
             // 
             // btn600
             // 
@@ -263,6 +240,7 @@
             this.btn600.TabIndex = 5;
             this.btn600.Text = "Level 600";
             this.btn600.UseVisualStyleBackColor = false;
+            this.btn600.Click += new System.EventHandler(this.btn600_Click);
             // 
             // btn500
             // 
@@ -280,6 +258,7 @@
             this.btn500.TabIndex = 4;
             this.btn500.Text = "Level 500";
             this.btn500.UseVisualStyleBackColor = false;
+            this.btn500.Click += new System.EventHandler(this.btn500_Click);
             // 
             // btn400
             // 
@@ -297,6 +276,7 @@
             this.btn400.TabIndex = 3;
             this.btn400.Text = "Level 400";
             this.btn400.UseVisualStyleBackColor = false;
+            this.btn400.Click += new System.EventHandler(this.btn400_Click);
             // 
             // btn300
             // 
@@ -314,6 +294,7 @@
             this.btn300.TabIndex = 2;
             this.btn300.Text = "Level 300";
             this.btn300.UseVisualStyleBackColor = false;
+            this.btn300.Click += new System.EventHandler(this.btn300_Click);
             // 
             // btn200
             // 
@@ -331,6 +312,7 @@
             this.btn200.TabIndex = 1;
             this.btn200.Text = "Level 200";
             this.btn200.UseVisualStyleBackColor = false;
+            this.btn200.Click += new System.EventHandler(this.btn200_Click);
             // 
             // btn100
             // 
@@ -348,6 +330,7 @@
             this.btn100.TabIndex = 0;
             this.btn100.Text = "Level 100";
             this.btn100.UseVisualStyleBackColor = false;
+            this.btn100.Click += new System.EventHandler(this.btn100_Click);
             // 
             // addStudentLink
             // 
@@ -382,6 +365,75 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "STUDENTS";
             // 
+            // stnt_id
+            // 
+            this.stnt_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stnt_id.DataPropertyName = "student_id";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
+            this.stnt_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.stnt_id.HeaderText = "ID";
+            this.stnt_id.Name = "stnt_id";
+            this.stnt_id.ReadOnly = true;
+            this.stnt_id.Width = 50;
+            // 
+            // stnt_name
+            // 
+            this.stnt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stnt_name.DataPropertyName = "name";
+            this.stnt_name.HeaderText = "NAME";
+            this.stnt_name.Name = "stnt_name";
+            this.stnt_name.ReadOnly = true;
+            // 
+            // stnt_level
+            // 
+            this.stnt_level.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stnt_level.DataPropertyName = "level";
+            this.stnt_level.HeaderText = "LEVEL";
+            this.stnt_level.Name = "stnt_level";
+            this.stnt_level.ReadOnly = true;
+            this.stnt_level.Width = 78;
+            // 
+            // stnt_room
+            // 
+            this.stnt_room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stnt_room.DataPropertyName = "room";
+            this.stnt_room.HeaderText = "ROOM";
+            this.stnt_room.Name = "stnt_room";
+            this.stnt_room.ReadOnly = true;
+            this.stnt_room.Width = 82;
+            // 
+            // category
+            // 
+            this.category.DataPropertyName = "category";
+            this.category.HeaderText = "category";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Visible = false;
+            // 
+            // view
+            // 
+            this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.view.HeaderText = "";
+            this.view.Name = "view";
+            this.view.ReadOnly = true;
+            this.view.Width = 5;
+            // 
+            // update
+            // 
+            this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.update.HeaderText = "";
+            this.update.Name = "update";
+            this.update.ReadOnly = true;
+            this.update.Width = 5;
+            // 
+            // delete
+            // 
+            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Width = 5;
+            // 
             // StudentModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -409,12 +461,6 @@
         private Panel panel4;
         private Label label2;
         private DataGridView studentDV;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewImageColumn view;
-        private DataGridViewImageColumn update;
-        private DataGridViewImageColumn delete;
         private Button searchBtn;
         private Panel panel1;
         private Button btnPostG;
@@ -427,5 +473,13 @@
         private LinkLabel addStudentLink;
         private TextBox searchTb;
         private Label label1;
+        private DataGridViewTextBoxColumn stnt_id;
+        private DataGridViewTextBoxColumn stnt_name;
+        private DataGridViewTextBoxColumn stnt_level;
+        private DataGridViewTextBoxColumn stnt_room;
+        private DataGridViewImageColumn view;
+        private DataGridViewImageColumn update;
+        private DataGridViewImageColumn delete;
+        private DataGridViewTextBoxColumn category;
     }
 }

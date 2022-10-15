@@ -132,8 +132,16 @@ namespace HALKEY.Pages
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show(ex.StackTrace);
-                    MessageBox.Show(ex.Message);
+                    
+                    
+                    if(ex.Message.Contains("Violation of PRIMARY KEY"))
+                    {
+                        MessageBox.Show("ID of student already exist", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else
