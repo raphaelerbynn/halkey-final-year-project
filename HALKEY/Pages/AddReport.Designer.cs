@@ -28,50 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.bgPanel = new System.Windows.Forms.Panel();
+            this.backLink = new System.Windows.Forms.LinkLabel();
             this.idTb = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.clearBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // bgPanel
             // 
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.idTb);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(938, 613);
-            this.panel1.TabIndex = 0;
+            this.bgPanel.BackColor = System.Drawing.Color.AliceBlue;
+            this.bgPanel.Controls.Add(this.clearBtn);
+            this.bgPanel.Controls.Add(this.saveBtn);
+            this.bgPanel.Controls.Add(this.comboBox2);
+            this.bgPanel.Controls.Add(this.comboBox1);
+            this.bgPanel.Controls.Add(this.backLink);
+            this.bgPanel.Controls.Add(this.textBox1);
+            this.bgPanel.Controls.Add(this.idTb);
+            this.bgPanel.Controls.Add(this.panel3);
+            this.bgPanel.Controls.Add(this.label5);
+            this.bgPanel.Controls.Add(this.panel1);
+            this.bgPanel.Controls.Add(this.panel4);
+            this.bgPanel.Controls.Add(this.label4);
+            this.bgPanel.Controls.Add(this.label3);
+            this.bgPanel.Controls.Add(this.panel2);
+            this.bgPanel.Controls.Add(this.label2);
+            this.bgPanel.Controls.Add(this.label1);
+            this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bgPanel.Location = new System.Drawing.Point(0, 0);
+            this.bgPanel.Name = "bgPanel";
+            this.bgPanel.Size = new System.Drawing.Size(938, 613);
+            this.bgPanel.TabIndex = 0;
             // 
-            // linkLabel1
+            // backLink
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.Location = new System.Drawing.Point(12, 18);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(39, 19);
-            this.linkLabel1.TabIndex = 17;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "<<<";
+            this.backLink.AutoSize = true;
+            this.backLink.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backLink.Location = new System.Drawing.Point(12, 18);
+            this.backLink.Name = "backLink";
+            this.backLink.Size = new System.Drawing.Size(39, 19);
+            this.backLink.TabIndex = 17;
+            this.backLink.TabStop = true;
+            this.backLink.Text = "<<<";
             // 
             // idTb
             // 
+            this.idTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.idTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.idTb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.idTb.Location = new System.Drawing.Point(172, 79);
+            this.idTb.Location = new System.Drawing.Point(233, 105);
             this.idTb.Name = "idTb";
-            this.idTb.Size = new System.Drawing.Size(446, 25);
+            this.idTb.Size = new System.Drawing.Size(520, 25);
             this.idTb.TabIndex = 16;
             // 
             // panel3
@@ -103,11 +123,11 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(72, 82);
+            this.label2.Location = new System.Drawing.Point(138, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 19);
+            this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 12;
-            this.label2.Text = "*STUDENT ID:";
+            this.label2.Text = "ISSUE TITLE:";
             // 
             // label1
             // 
@@ -116,34 +136,152 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(381, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 21);
+            this.label1.Size = new System.Drawing.Size(175, 21);
             this.label1.TabIndex = 11;
-            this.label1.Text = "ADD STUDENT DETAILS";
+            this.label1.Text = "ADD REPORT DETAILS";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(71, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 19);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "PROBLEM STATEMENT:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(233, 149);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(520, 220);
+            this.textBox1.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(166, 395);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 19);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "ROOM:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(233, 392);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(520, 25);
+            this.comboBox1.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(106, 442);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 19);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "ROOM MEMBER:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Enabled = false;
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(233, 439);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(520, 25);
+            this.comboBox2.TabIndex = 18;
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clearBtn.AutoSize = true;
+            this.clearBtn.BackColor = System.Drawing.Color.Red;
+            this.clearBtn.FlatAppearance.BorderSize = 0;
+            this.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn.ForeColor = System.Drawing.Color.White;
+            this.clearBtn.Location = new System.Drawing.Point(487, 556);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(85, 27);
+            this.clearBtn.TabIndex = 19;
+            this.clearBtn.Text = "CLEAR DATA";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.saveBtn.AutoSize = true;
+            this.saveBtn.BackColor = System.Drawing.Color.Green;
+            this.saveBtn.FlatAppearance.BorderSize = 0;
+            this.saveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.saveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Location = new System.Drawing.Point(384, 556);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(76, 27);
+            this.saveBtn.TabIndex = 20;
+            this.saveBtn.Text = "SAVE DATA";
+            this.saveBtn.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(12, 599);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(914, 2);
+            this.panel1.TabIndex = 15;
             // 
             // AddReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 613);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bgPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddReport";
             this.Text = "AddReport";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.bgPanel.ResumeLayout(false);
+            this.bgPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Panel panel1;
-        private LinkLabel linkLabel1;
+        private Panel bgPanel;
+        private LinkLabel backLink;
         private TextBox idTb;
         private Panel panel3;
         private Panel panel4;
         private Panel panel2;
         private Label label2;
         private Label label1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
+        private TextBox textBox1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Button clearBtn;
+        private Button saveBtn;
+        private Panel panel1;
     }
 }

@@ -13,6 +13,8 @@ namespace HALKEY.Pages
 {
     public partial class StudentModule : Form
     {
+        public static string id;
+        OpenNewPage onp = new OpenNewPage();
         public StudentModule()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace HALKEY.Pages
 
         private void addStudentLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenNewPage onp = new OpenNewPage();
+            
             onp.OpenChildForm(new AddStudent(), bgPanel);
         }
 
@@ -103,6 +105,21 @@ namespace HALKEY.Pages
         private void btnPostG_Click(object sender, EventArgs e)
         {
             (studentDV.DataSource as DataTable).DefaultView.RowFilter = string.Format("category LIKE '%{0}%'", "POST");
+        }
+
+        private void studentDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = studentDV.Rows[e.RowIndex];
+                id = row.Cells["stnt_id"].Value.ToString();
+
+                if (studentDV.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
+                {
+                    onp.OpenChildForm(new StudentDetails(), bgPanel);
+                }
+            }
+            catch { }
         }
     }
 }
