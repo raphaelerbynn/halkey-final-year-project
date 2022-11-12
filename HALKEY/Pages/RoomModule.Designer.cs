@@ -28,13 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.roomDV = new System.Windows.Forms.DataGridView();
@@ -48,49 +62,35 @@
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.clearBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.roomNumBar = new System.Windows.Forms.NumericUpDown();
             this.capacityTb = new System.Windows.Forms.ComboBox();
+            this.searchTb = new System.Windows.Forms.TextBox();
             this.blockTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.roomLbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.roomLbl = new System.Windows.Forms.Label();
-            this.searchTb = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.bgPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomNumBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
@@ -151,16 +151,165 @@
             this.panel2.Size = new System.Drawing.Size(423, 385);
             this.panel2.TabIndex = 51;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HALKEY.Properties.Resources.assign;
+            this.pictureBox4.Location = new System.Drawing.Point(9, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 52;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "1";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::HALKEY.Properties.Resources.assign;
+            this.pictureBox10.Location = new System.Drawing.Point(210, 821);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 52;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Tag = "8";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::HALKEY.Properties.Resources.assign;
+            this.pictureBox9.Location = new System.Drawing.Point(10, 821);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 52;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Tag = "7";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(210, 1035);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 17);
+            this.label14.TabIndex = 41;
+            this.label14.Tag = "8";
+            this.label14.Text = "NOI NAME";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::HALKEY.Properties.Resources.assign;
+            this.pictureBox8.Location = new System.Drawing.Point(210, 548);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 52;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Tag = "6";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(10, 1035);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 17);
+            this.label13.TabIndex = 41;
+            this.label13.Tag = "7";
+            this.label13.Text = "NOI NAME";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::HALKEY.Properties.Resources.assign;
+            this.pictureBox7.Location = new System.Drawing.Point(10, 548);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 52;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Tag = "5";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(210, 762);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 17);
+            this.label12.TabIndex = 41;
+            this.label12.Tag = "6";
+            this.label12.Text = "NO NAME";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::HALKEY.Properties.Resources.assign;
+            this.pictureBox6.Location = new System.Drawing.Point(210, 275);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 52;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Tag = "4";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(10, 762);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 17);
+            this.label11.TabIndex = 41;
+            this.label11.Tag = "5";
+            this.label11.Text = "NO NAME";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::HALKEY.Properties.Resources.assign;
+            this.pictureBox5.Location = new System.Drawing.Point(10, 275);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 52;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "3";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(210, 489);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 17);
+            this.label9.TabIndex = 41;
+            this.label9.Tag = "4";
+            this.label9.Text = "NO NAME";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox2.Location = new System.Drawing.Point(203, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(209, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(194, 211);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 52;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Tag = "2";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(10, 489);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 17);
+            this.label8.TabIndex = 41;
+            this.label8.Tag = "3";
+            this.label8.Text = "NO NAME";
             // 
             // pictureBox1
             // 
@@ -170,12 +319,22 @@
             this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 1108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 19);
+            this.label3.TabIndex = 41;
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(203, 217);
+            this.label7.Location = new System.Drawing.Point(209, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 17);
             this.label7.TabIndex = 41;
@@ -187,7 +346,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 217);
+            this.label4.Location = new System.Drawing.Point(9, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 17);
             this.label4.TabIndex = 41;
@@ -203,14 +362,14 @@
             this.roomDV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.roomDV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.roomDV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.roomDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.roomDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.roomDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.room_id,
@@ -221,15 +380,15 @@
             this.view,
             this.update,
             this.delete});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.roomDV.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.roomDV.DefaultCellStyle = dataGridViewCellStyle3;
             this.roomDV.EnableHeadersVisualStyles = false;
             this.roomDV.Location = new System.Drawing.Point(12, 191);
             this.roomDV.Name = "roomDV";
@@ -245,8 +404,8 @@
             // 
             this.room_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.room_id.DataPropertyName = "room)id";
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
-            this.room_id.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
+            this.room_id.DefaultCellStyle = dataGridViewCellStyle2;
             this.room_id.HeaderText = "ID";
             this.room_id.Name = "room_id";
             this.room_id.ReadOnly = true;
@@ -335,6 +494,23 @@
             this.clearBtn.Text = "CLEAR DATA";
             this.clearBtn.UseVisualStyleBackColor = false;
             // 
+            // searchBtn
+            // 
+            this.searchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.searchBtn.AutoSize = true;
+            this.searchBtn.BackColor = System.Drawing.Color.Blue;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.searchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.ForeColor = System.Drawing.Color.White;
+            this.searchBtn.Location = new System.Drawing.Point(389, 158);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(100, 27);
+            this.searchBtn.TabIndex = 46;
+            this.searchBtn.Text = "SEARCH ROOM";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            // 
             // saveBtn
             // 
             this.saveBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -351,6 +527,7 @@
             this.saveBtn.TabIndex = 46;
             this.saveBtn.Text = "SAVE ROOM";
             this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // roomNumBar
             // 
@@ -385,6 +562,16 @@
             this.capacityTb.Name = "capacityTb";
             this.capacityTb.Size = new System.Drawing.Size(170, 25);
             this.capacityTb.TabIndex = 44;
+            // 
+            // searchTb
+            // 
+            this.searchTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.searchTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.searchTb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchTb.Location = new System.Drawing.Point(12, 160);
+            this.searchTb.Name = "searchTb";
+            this.searchTb.Size = new System.Drawing.Size(371, 25);
+            this.searchTb.TabIndex = 43;
             // 
             // blockTb
             // 
@@ -429,6 +616,28 @@
             this.label10.TabIndex = 42;
             this.label10.Text = "CAPACITY:";
             // 
+            // roomLbl
+            // 
+            this.roomLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.roomLbl.AutoSize = true;
+            this.roomLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.roomLbl.Location = new System.Drawing.Point(692, 164);
+            this.roomLbl.Name = "roomLbl";
+            this.roomLbl.Size = new System.Drawing.Size(52, 21);
+            this.roomLbl.TabIndex = 41;
+            this.roomLbl.Text = "A 112";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(631, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 19);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "ROOM:";
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -472,214 +681,6 @@
             this.panel11.Size = new System.Drawing.Size(914, 2);
             this.panel11.TabIndex = 38;
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 1108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 19);
-            this.label3.TabIndex = 41;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(194, 211);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 52;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Tag = "1";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(3, 489);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 17);
-            this.label8.TabIndex = 41;
-            this.label8.Tag = "3";
-            this.label8.Text = "NO NAME";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 275);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(194, 211);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 52;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "3";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(203, 489);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 17);
-            this.label9.TabIndex = 41;
-            this.label9.Tag = "4";
-            this.label9.Text = "NO NAME";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox6.Location = new System.Drawing.Point(203, 275);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(194, 211);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 52;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Tag = "4";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(3, 762);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 17);
-            this.label11.TabIndex = 41;
-            this.label11.Tag = "5";
-            this.label11.Text = "NO NAME";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 548);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(194, 211);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 52;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Tag = "5";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(203, 762);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 17);
-            this.label12.TabIndex = 41;
-            this.label12.Tag = "6";
-            this.label12.Text = "NO NAME";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox8.Location = new System.Drawing.Point(203, 548);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(194, 211);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 52;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Tag = "6";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(3, 1035);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 17);
-            this.label13.TabIndex = 41;
-            this.label13.Tag = "7";
-            this.label13.Text = "NOI NAME";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 821);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(194, 211);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 52;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Tag = "7";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(203, 1035);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 17);
-            this.label14.TabIndex = 41;
-            this.label14.Tag = "8";
-            this.label14.Text = "NOI NAME";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::HALKEY.Properties.Resources.assign;
-            this.pictureBox10.Location = new System.Drawing.Point(203, 821);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(194, 211);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 52;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Tag = "8";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(631, 166);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 19);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "ROOM:";
-            // 
-            // roomLbl
-            // 
-            this.roomLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.roomLbl.AutoSize = true;
-            this.roomLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.roomLbl.Location = new System.Drawing.Point(692, 164);
-            this.roomLbl.Name = "roomLbl";
-            this.roomLbl.Size = new System.Drawing.Size(52, 21);
-            this.roomLbl.TabIndex = 41;
-            this.roomLbl.Text = "A 112";
-            // 
-            // searchTb
-            // 
-            this.searchTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.searchTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.searchTb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchTb.Location = new System.Drawing.Point(12, 160);
-            this.searchTb.Name = "searchTb";
-            this.searchTb.Size = new System.Drawing.Size(371, 25);
-            this.searchTb.TabIndex = 43;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.searchBtn.AutoSize = true;
-            this.searchBtn.BackColor = System.Drawing.Color.Blue;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.searchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.Location = new System.Drawing.Point(389, 158);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(100, 27);
-            this.searchBtn.TabIndex = 46;
-            this.searchBtn.Text = "SEARCH ROOM";
-            this.searchBtn.UseVisualStyleBackColor = false;
-            // 
             // RoomModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -694,17 +695,17 @@
             this.bgPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomNumBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }

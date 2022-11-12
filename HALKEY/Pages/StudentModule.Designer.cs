@@ -39,14 +39,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.studentDV = new System.Windows.Forms.DataGridView();
-            this.stnt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stnt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stnt_level = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stnt_room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.view = new System.Windows.Forms.DataGridViewImageColumn();
-            this.update = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.searchBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPostG = new System.Windows.Forms.Button();
@@ -59,6 +51,14 @@
             this.addStudentLink = new System.Windows.Forms.LinkLabel();
             this.searchTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.stnt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stnt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stnt_level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stnt_room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.view = new System.Windows.Forms.DataGridViewImageColumn();
+            this.update = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDV)).BeginInit();
             this.panel1.SuspendLayout();
@@ -173,75 +173,6 @@
             this.studentDV.Size = new System.Drawing.Size(724, 476);
             this.studentDV.TabIndex = 14;
             this.studentDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDV_CellContentClick);
-            // 
-            // stnt_id
-            // 
-            this.stnt_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stnt_id.DataPropertyName = "student_id";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
-            this.stnt_id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.stnt_id.HeaderText = "ID";
-            this.stnt_id.Name = "stnt_id";
-            this.stnt_id.ReadOnly = true;
-            this.stnt_id.Width = 50;
-            // 
-            // stnt_name
-            // 
-            this.stnt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stnt_name.DataPropertyName = "name";
-            this.stnt_name.HeaderText = "NAME";
-            this.stnt_name.Name = "stnt_name";
-            this.stnt_name.ReadOnly = true;
-            // 
-            // stnt_level
-            // 
-            this.stnt_level.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stnt_level.DataPropertyName = "level";
-            this.stnt_level.HeaderText = "LEVEL";
-            this.stnt_level.Name = "stnt_level";
-            this.stnt_level.ReadOnly = true;
-            this.stnt_level.Width = 78;
-            // 
-            // stnt_room
-            // 
-            this.stnt_room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stnt_room.DataPropertyName = "room";
-            this.stnt_room.HeaderText = "ROOM";
-            this.stnt_room.Name = "stnt_room";
-            this.stnt_room.ReadOnly = true;
-            this.stnt_room.Width = 82;
-            // 
-            // category
-            // 
-            this.category.DataPropertyName = "category";
-            this.category.HeaderText = "category";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.Visible = false;
-            // 
-            // view
-            // 
-            this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.view.HeaderText = "";
-            this.view.Name = "view";
-            this.view.ReadOnly = true;
-            this.view.Width = 5;
-            // 
-            // update
-            // 
-            this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.update.HeaderText = "";
-            this.update.Name = "update";
-            this.update.ReadOnly = true;
-            this.update.Width = 5;
-            // 
-            // delete
-            // 
-            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.delete.HeaderText = "";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Width = 5;
             // 
             // searchBtn
             // 
@@ -435,6 +366,81 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "STUDENTS";
             // 
+            // stnt_id
+            // 
+            this.stnt_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stnt_id.DataPropertyName = "student_id";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
+            this.stnt_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.stnt_id.HeaderText = "ID";
+            this.stnt_id.Name = "stnt_id";
+            this.stnt_id.ReadOnly = true;
+            this.stnt_id.Width = 50;
+            // 
+            // stnt_name
+            // 
+            this.stnt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stnt_name.DataPropertyName = "name";
+            this.stnt_name.HeaderText = "NAME";
+            this.stnt_name.Name = "stnt_name";
+            this.stnt_name.ReadOnly = true;
+            // 
+            // stnt_level
+            // 
+            this.stnt_level.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stnt_level.DataPropertyName = "level";
+            this.stnt_level.HeaderText = "LEVEL";
+            this.stnt_level.Name = "stnt_level";
+            this.stnt_level.ReadOnly = true;
+            this.stnt_level.Width = 78;
+            // 
+            // stnt_room
+            // 
+            this.stnt_room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stnt_room.DataPropertyName = "room";
+            this.stnt_room.HeaderText = "ROOM";
+            this.stnt_room.Name = "stnt_room";
+            this.stnt_room.ReadOnly = true;
+            this.stnt_room.Width = 82;
+            // 
+            // category
+            // 
+            this.category.DataPropertyName = "category";
+            this.category.HeaderText = "category";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Visible = false;
+            // 
+            // view
+            // 
+            this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.view.HeaderText = "";
+            this.view.Image = global::HALKEY.Properties.Resources.view;
+            this.view.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.view.Name = "view";
+            this.view.ReadOnly = true;
+            this.view.Width = 5;
+            // 
+            // update
+            // 
+            this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.update.HeaderText = "";
+            this.update.Image = global::HALKEY.Properties.Resources.update;
+            this.update.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.update.Name = "update";
+            this.update.ReadOnly = true;
+            this.update.Width = 5;
+            // 
+            // delete
+            // 
+            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.delete.HeaderText = "";
+            this.delete.Image = global::HALKEY.Properties.Resources.delete;
+            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Width = 5;
+            // 
             // StudentModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -478,9 +484,9 @@
         private DataGridViewTextBoxColumn stnt_name;
         private DataGridViewTextBoxColumn stnt_level;
         private DataGridViewTextBoxColumn stnt_room;
+        private DataGridViewTextBoxColumn category;
         private DataGridViewImageColumn view;
         private DataGridViewImageColumn update;
         private DataGridViewImageColumn delete;
-        private DataGridViewTextBoxColumn category;
     }
 }

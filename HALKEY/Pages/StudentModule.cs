@@ -15,6 +15,8 @@ namespace HALKEY.Pages
     {
         public static string id;
         OpenNewPage onp = new OpenNewPage();
+        SqlConnection conn = new SqlConnection(DbConn.connString);
+
         public StudentModule()
         {
             InitializeComponent();
@@ -58,7 +60,7 @@ namespace HALKEY.Pages
         {
             try
             {
-                SqlConnection conn = new SqlConnection(DbConn.connString);
+                
                 DataTable dataTable = new DataTable();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
                 dataAdapter.Fill(dataTable);
@@ -117,6 +119,37 @@ namespace HALKEY.Pages
                 if (studentDV.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
                 {
                     onp.OpenChildForm(new StudentDetails(), bgPanel);
+                }
+
+                if (studentDV.Columns[e.ColumnIndex].Name == "update" && e.RowIndex >= 0)
+                {
+                    onp.OpenChildForm(new UpdateStudent(), bgPanel);
+                }
+
+                if (studentDV.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete this student?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        
+                        try
+                        {
+                            conn.Open();
+                            string query = "DELETE FROM Student WHERE student_id='" + id + "'";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        studentDV.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show("Student deleted from system");
+
+                    }
                 }
             }
             catch { }
