@@ -21,7 +21,7 @@ namespace HALKEY.Pages
         {
             InitializeComponent();
             string query = "SELECT student_id, level, room, category, fname+' '+mname+' '+lname AS name FROM Student";
-            fillTable(query);
+            DbConn.fillTable(query, studentDV, conn);
             columnOrder();
         }
 
@@ -56,22 +56,7 @@ namespace HALKEY.Pages
             }
         }
 
-        private void fillTable(string query)
-        {
-            try
-            {
-                
-                DataTable dataTable = new DataTable();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
-                dataAdapter.Fill(dataTable);
-                studentDV.DataSource = dataTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Console.WriteLine(ex);
-            }
-        }
+        
 
         private void btn100_Click(object sender, EventArgs e)
         {

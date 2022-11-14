@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -57,12 +57,12 @@
             this.room_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.members = new System.Windows.Forms.DataGridViewImageColumn();
-            this.view = new System.Windows.Forms.DataGridViewImageColumn();
             this.update = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.clearBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.roomNumBar = new System.Windows.Forms.NumericUpDown();
             this.capacityTb = new System.Windows.Forms.ComboBox();
@@ -101,6 +101,7 @@
             this.bgPanel.Controls.Add(this.panel3);
             this.bgPanel.Controls.Add(this.clearBtn);
             this.bgPanel.Controls.Add(this.searchBtn);
+            this.bgPanel.Controls.Add(this.updateBtn);
             this.bgPanel.Controls.Add(this.saveBtn);
             this.bgPanel.Controls.Add(this.roomNumBar);
             this.bgPanel.Controls.Add(this.capacityTb);
@@ -191,10 +192,10 @@
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(210, 1035);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 17);
+            this.label14.Size = new System.Drawing.Size(69, 17);
             this.label14.TabIndex = 41;
             this.label14.Tag = "8";
-            this.label14.Text = "NOI NAME";
+            this.label14.Text = "NO NAME";
             // 
             // pictureBox8
             // 
@@ -214,10 +215,10 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(10, 1035);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 17);
+            this.label13.Size = new System.Drawing.Size(69, 17);
             this.label13.TabIndex = 41;
             this.label13.Tag = "7";
-            this.label13.Text = "NOI NAME";
+            this.label13.Text = "NO NAME";
             // 
             // pictureBox7
             // 
@@ -362,14 +363,14 @@
             this.roomDV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.roomDV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.roomDV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.roomDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.roomDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.roomDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.room_id,
@@ -377,18 +378,17 @@
             this.room_num,
             this.capacity,
             this.members,
-            this.view,
             this.update,
             this.delete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.roomDV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.roomDV.DefaultCellStyle = dataGridViewCellStyle6;
             this.roomDV.EnableHeadersVisualStyles = false;
             this.roomDV.Location = new System.Drawing.Point(12, 191);
             this.roomDV.Name = "roomDV";
@@ -399,13 +399,14 @@
             this.roomDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.roomDV.Size = new System.Drawing.Size(477, 402);
             this.roomDV.TabIndex = 50;
+            this.roomDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomDV_CellContentClick);
             // 
             // room_id
             // 
             this.room_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.room_id.DataPropertyName = "room)id";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
-            this.room_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.room_id.DataPropertyName = "room_id";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
+            this.room_id.DefaultCellStyle = dataGridViewCellStyle5;
             this.room_id.HeaderText = "ID";
             this.room_id.Name = "room_id";
             this.room_id.ReadOnly = true;
@@ -423,7 +424,7 @@
             // room_num
             // 
             this.room_num.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.room_num.DataPropertyName = "room_number";
+            this.room_num.DataPropertyName = "number";
             this.room_num.HeaderText = "ROOM NUMBER";
             this.room_num.Name = "room_num";
             this.room_num.ReadOnly = true;
@@ -441,22 +442,18 @@
             // 
             this.members.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.members.HeaderText = "";
+            this.members.Image = global::HALKEY.Properties.Resources.view;
+            this.members.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.members.Name = "members";
             this.members.ReadOnly = true;
             this.members.Width = 5;
-            // 
-            // view
-            // 
-            this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.view.HeaderText = "";
-            this.view.Name = "view";
-            this.view.ReadOnly = true;
-            this.view.Width = 5;
             // 
             // update
             // 
             this.update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.update.HeaderText = "";
+            this.update.Image = global::HALKEY.Properties.Resources.update;
+            this.update.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.update.Name = "update";
             this.update.ReadOnly = true;
             this.update.Width = 5;
@@ -465,6 +462,8 @@
             // 
             this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.delete.HeaderText = "";
+            this.delete.Image = global::HALKEY.Properties.Resources.delete;
+            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Width = 5;
@@ -487,7 +486,7 @@
             this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearBtn.ForeColor = System.Drawing.Color.White;
-            this.clearBtn.Location = new System.Drawing.Point(480, 102);
+            this.clearBtn.Location = new System.Drawing.Point(559, 102);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(85, 27);
             this.clearBtn.TabIndex = 47;
@@ -498,7 +497,7 @@
             // 
             this.searchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchBtn.AutoSize = true;
-            this.searchBtn.BackColor = System.Drawing.Color.Blue;
+            this.searchBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.searchBtn.FlatAppearance.BorderSize = 0;
             this.searchBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
             this.searchBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
@@ -511,6 +510,25 @@
             this.searchBtn.Text = "SEARCH ROOM";
             this.searchBtn.UseVisualStyleBackColor = false;
             // 
+            // updateBtn
+            // 
+            this.updateBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.updateBtn.AutoSize = true;
+            this.updateBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.updateBtn.Enabled = false;
+            this.updateBtn.FlatAppearance.BorderSize = 0;
+            this.updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.ForeColor = System.Drawing.Color.White;
+            this.updateBtn.Location = new System.Drawing.Point(341, 102);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(98, 27);
+            this.updateBtn.TabIndex = 46;
+            this.updateBtn.Text = "UPDATE ROOM";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // saveBtn
             // 
             this.saveBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -521,7 +539,7 @@
             this.saveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(377, 102);
+            this.saveBtn.Location = new System.Drawing.Point(456, 102);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(82, 27);
             this.saveBtn.TabIndex = 46;
@@ -728,14 +746,6 @@
         private Button saveBtn;
         private Label label2;
         private DataGridView roomDV;
-        private DataGridViewTextBoxColumn room_id;
-        private DataGridViewTextBoxColumn block;
-        private DataGridViewTextBoxColumn room_num;
-        private DataGridViewTextBoxColumn capacity;
-        private DataGridViewImageColumn members;
-        private DataGridViewImageColumn view;
-        private DataGridViewImageColumn update;
-        private DataGridViewImageColumn delete;
         private Panel panel2;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
@@ -759,5 +769,13 @@
         private TextBox searchTb;
         private Label roomLbl;
         private Label label5;
+        private DataGridViewTextBoxColumn room_id;
+        private DataGridViewTextBoxColumn block;
+        private DataGridViewTextBoxColumn room_num;
+        private DataGridViewTextBoxColumn capacity;
+        private DataGridViewImageColumn members;
+        private DataGridViewImageColumn update;
+        private DataGridViewImageColumn delete;
+        private Button updateBtn;
     }
 }
