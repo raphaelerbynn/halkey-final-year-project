@@ -13,8 +13,8 @@ namespace HALKEY.Pages
 {
     public partial class AddStudent : Form
     {
-        byte[] imgByte;
-
+        private byte[] imgByte = null;
+        SqlConnection conn = new SqlConnection(DbConn.connString);
 
         public AddStudent()
         {
@@ -22,6 +22,8 @@ namespace HALKEY.Pages
 
             genderCb.SelectedIndex = 0;
             categoryCb.SelectedIndex = 0;
+
+            comboFill();
 
         }
 
@@ -79,7 +81,7 @@ namespace HALKEY.Pages
                 String.IsNullOrWhiteSpace(programTb.Text)))
             {
                 
-                SqlConnection conn = new SqlConnection(DbConn.connString);
+                
                 try
                 {
                     string middle_name = "";
@@ -93,7 +95,7 @@ namespace HALKEY.Pages
                     {
                         middle_name = mnameTb.Text;
                     }
-                    
+
                     if (imgByte == null)
                     {
                         using (MemoryStream ms = new MemoryStream())
@@ -102,13 +104,11 @@ namespace HALKEY.Pages
                             imgByte = ms.ToArray();
                         }
                     }
-
-                    conn.Open();
-                    
                     //System.Diagnostics.Debug.WriteLine(Encoding.Default.GetString(imgByte));
-
-                    string query = "INSERT INTO Student VALUES(@student_id, @fname, @mname, @lname, @gender, @contact, " +
-                        "@emergency_contact, @programme, @category, @level, @room, @passport_pic, @date_registered)";
+                    conn.Open();
+                    string query = "INSERT INTO Student VALUES(@student_id, @fname, @mname, @lname, @gender, " +
+                        "@emergency_contact, @programme, @category, @level, @level, @passport_pic, @date_registered," +
+                        " @room_id)";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@student_id", idTb.Text);
@@ -121,9 +121,9 @@ namespace HALKEY.Pages
                     cmd.Parameters.AddWithValue("@programme", programTb.Text);
                     cmd.Parameters.AddWithValue("@category", categoryCb.Text);
                     cmd.Parameters.AddWithValue("@level", levelCb.Text);
-                    cmd.Parameters.AddWithValue("@room", room);
                     cmd.Parameters.AddWithValue("@passport_pic", imgByte);
                     cmd.Parameters.AddWithValue("@date_registered", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@room_id", room);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Data saved successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearFeild();
@@ -132,15 +132,15 @@ namespace HALKEY.Pages
                 }
                 catch (SqlException ex)
                 {
-                    
-                    
+
+                    conn.Close();
                     if(ex.Message.Contains("Violation of PRIMARY KEY"))
                     {
                         MessageBox.Show("ID of student already exist", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.ToString());
                     }
                 }
             }
@@ -171,6 +171,22 @@ namespace HALKEY.Pages
                 levelCb.SelectedIndex = -1;
                 levelCb.Enabled = false;
             }
+        }
+
+        private void comboFill()
+        {
+            conn.Open();
+
+            string query = "SELECT room_id FROM Room WHERE current_members<capacity ORDER BY room_id";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                roomCb.Items.Add(reader[0].ToString());
+            }
+            reader.Close();
+
+            conn.Close();
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)

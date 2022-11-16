@@ -23,6 +23,7 @@ namespace HALKEY.Pages
         {
             InitializeComponent();
             fillData();
+            comboFill();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -52,7 +53,7 @@ namespace HALKEY.Pages
                     levelCb.SelectedItem = reader["level"].ToString();
                     genderCb.SelectedItem = reader["gender"].ToString();
                     categoryCb.SelectedItem = reader["category"].ToString();
-                    roomCb.SelectedItem = reader["room"].ToString();
+                    roomCb.SelectedItem = reader["room_id"].ToString();
 
                     if (!DBNull.Value.Equals(reader["passport_pic"]))
                     {
@@ -67,9 +68,13 @@ namespace HALKEY.Pages
 
                conn.Close();
 
-                idTb.Enabled = false;
+               idTb.Enabled = false;
             }
-            catch { }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -101,7 +106,7 @@ namespace HALKEY.Pages
                         "level = '" + levelCb.Text + "'," +
                         "gender = '" + genderCb.Text + "'," +
                         "category = '" + categoryCb.Text + "'," +
-                        "room = '" + roomCb.Text + "' " +
+                        "room_id = '" + roomCb.Text + "' " +
                         " WHERE student_id = '" + idTb.Text + "' ";
 
                     string query1 = "UPDATE Student SET passport_pic=@img WHERE student_id = '" + id + "'";
@@ -109,11 +114,12 @@ namespace HALKEY.Pages
                     conn.Open();
                     cmd = new SqlCommand(query0, conn);
                     cmd.ExecuteNonQuery();
+                    conn.Close();
 
+                    conn.Open();
                     cmd = new SqlCommand(query1, conn);
                     cmd.Parameters.AddWithValue("@img", imgByte);
                     cmd.ExecuteNonQuery();
-
                     conn.Close();
 
                 }
@@ -138,6 +144,25 @@ namespace HALKEY.Pages
                 }
 
             }
+        }
+
+        private void comboFill()
+        {
+            try
+            {
+                
+                conn.Open();
+                query = "SELECT room_id FROM Room WHERE current_members<capacity ORDER BY room_id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    roomCb.Items.Add(reader[0].ToString());
+                }
+                reader.Close();
+                conn.Close();
+            }
+            catch { }
         }
     }
 }

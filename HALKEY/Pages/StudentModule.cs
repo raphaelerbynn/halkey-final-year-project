@@ -20,7 +20,7 @@ namespace HALKEY.Pages
         public StudentModule()
         {
             InitializeComponent();
-            string query = "SELECT student_id, level, room, category, fname+' '+mname+' '+lname AS name FROM Student";
+            string query = "SELECT student_id, level, room_id, category, fname+' '+mname+' '+lname AS name FROM Student";
             DbConn.fillTable(query, studentDV, conn);
             columnOrder();
         }
@@ -35,6 +35,8 @@ namespace HALKEY.Pages
             studentDV.Columns["view"].DisplayIndex = 4;
             studentDV.Columns["update"].DisplayIndex = 5;
             studentDV.Columns["delete"].DisplayIndex = 6;
+
+
         }
 
         private void addStudentLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -129,6 +131,7 @@ namespace HALKEY.Pages
                         }
                         catch (Exception ex)
                         {
+                            conn.Close();
                             MessageBox.Show(ex.Message);
                         }
                         studentDV.Rows.RemoveAt(e.RowIndex);
@@ -137,7 +140,10 @@ namespace HALKEY.Pages
                     }
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

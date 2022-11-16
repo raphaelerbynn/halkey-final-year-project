@@ -167,7 +167,6 @@
             this.studentDV.Name = "studentDV";
             this.studentDV.ReadOnly = true;
             this.studentDV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.studentDV.RowHeadersVisible = false;
             this.studentDV.RowTemplate.Height = 25;
             this.studentDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.studentDV.Size = new System.Drawing.Size(724, 476);
@@ -397,7 +396,7 @@
             // stnt_room
             // 
             this.stnt_room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stnt_room.DataPropertyName = "room";
+            this.stnt_room.DataPropertyName = "room_id";
             this.stnt_room.HeaderText = "ROOM";
             this.stnt_room.Name = "stnt_room";
             this.stnt_room.ReadOnly = true;

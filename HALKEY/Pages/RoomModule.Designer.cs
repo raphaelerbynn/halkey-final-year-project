@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.viewPanel = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -79,7 +79,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.bgPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.viewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -96,7 +96,7 @@
             // bgPanel
             // 
             this.bgPanel.BackColor = System.Drawing.Color.AliceBlue;
-            this.bgPanel.Controls.Add(this.panel2);
+            this.bgPanel.Controls.Add(this.viewPanel);
             this.bgPanel.Controls.Add(this.roomDV);
             this.bgPanel.Controls.Add(this.panel3);
             this.bgPanel.Controls.Add(this.clearBtn);
@@ -123,41 +123,41 @@
             this.bgPanel.Size = new System.Drawing.Size(938, 613);
             this.bgPanel.TabIndex = 0;
             // 
-            // panel2
+            // viewPanel
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.AutoScrollMargin = new System.Drawing.Size(1, 0);
-            this.panel2.AutoScrollMinSize = new System.Drawing.Size(1, 0);
-            this.panel2.BackColor = System.Drawing.Color.LightBlue;
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox10);
-            this.panel2.Controls.Add(this.pictureBox9);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.pictureBox8);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.pictureBox7);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(503, 208);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 385);
-            this.panel2.TabIndex = 51;
+            this.viewPanel.AutoScroll = true;
+            this.viewPanel.AutoScrollMargin = new System.Drawing.Size(1, 0);
+            this.viewPanel.AutoScrollMinSize = new System.Drawing.Size(1, 0);
+            this.viewPanel.BackColor = System.Drawing.Color.LightBlue;
+            this.viewPanel.Controls.Add(this.pictureBox4);
+            this.viewPanel.Controls.Add(this.pictureBox10);
+            this.viewPanel.Controls.Add(this.pictureBox9);
+            this.viewPanel.Controls.Add(this.label14);
+            this.viewPanel.Controls.Add(this.pictureBox8);
+            this.viewPanel.Controls.Add(this.label13);
+            this.viewPanel.Controls.Add(this.pictureBox7);
+            this.viewPanel.Controls.Add(this.label12);
+            this.viewPanel.Controls.Add(this.pictureBox6);
+            this.viewPanel.Controls.Add(this.label11);
+            this.viewPanel.Controls.Add(this.pictureBox5);
+            this.viewPanel.Controls.Add(this.label9);
+            this.viewPanel.Controls.Add(this.pictureBox2);
+            this.viewPanel.Controls.Add(this.label8);
+            this.viewPanel.Controls.Add(this.pictureBox1);
+            this.viewPanel.Controls.Add(this.label3);
+            this.viewPanel.Controls.Add(this.label7);
+            this.viewPanel.Controls.Add(this.label4);
+            this.viewPanel.Location = new System.Drawing.Point(503, 208);
+            this.viewPanel.Name = "viewPanel";
+            this.viewPanel.Size = new System.Drawing.Size(423, 385);
+            this.viewPanel.TabIndex = 51;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox4.Location = new System.Drawing.Point(9, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox4.Size = new System.Drawing.Size(180, 190);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 52;
             this.pictureBox4.TabStop = false;
@@ -168,7 +168,7 @@
             this.pictureBox10.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox10.Location = new System.Drawing.Point(210, 821);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox10.Size = new System.Drawing.Size(180, 190);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 52;
             this.pictureBox10.TabStop = false;
@@ -179,7 +179,7 @@
             this.pictureBox9.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox9.Location = new System.Drawing.Point(10, 821);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox9.Size = new System.Drawing.Size(180, 190);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 52;
             this.pictureBox9.TabStop = false;
@@ -190,7 +190,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(210, 1035);
+            this.label14.Location = new System.Drawing.Point(257, 1014);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(69, 17);
             this.label14.TabIndex = 41;
@@ -202,7 +202,7 @@
             this.pictureBox8.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox8.Location = new System.Drawing.Point(210, 548);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox8.Size = new System.Drawing.Size(180, 190);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 52;
             this.pictureBox8.TabStop = false;
@@ -213,7 +213,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(10, 1035);
+            this.label13.Location = new System.Drawing.Point(57, 1014);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 17);
             this.label13.TabIndex = 41;
@@ -225,7 +225,7 @@
             this.pictureBox7.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox7.Location = new System.Drawing.Point(10, 548);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox7.Size = new System.Drawing.Size(180, 190);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 52;
             this.pictureBox7.TabStop = false;
@@ -236,7 +236,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(210, 762);
+            this.label12.Location = new System.Drawing.Point(257, 741);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 17);
             this.label12.TabIndex = 41;
@@ -248,7 +248,7 @@
             this.pictureBox6.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox6.Location = new System.Drawing.Point(210, 275);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox6.Size = new System.Drawing.Size(180, 190);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 52;
             this.pictureBox6.TabStop = false;
@@ -259,7 +259,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(10, 762);
+            this.label11.Location = new System.Drawing.Point(57, 741);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 41;
@@ -271,7 +271,7 @@
             this.pictureBox5.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox5.Location = new System.Drawing.Point(10, 275);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox5.Size = new System.Drawing.Size(180, 190);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 52;
             this.pictureBox5.TabStop = false;
@@ -282,7 +282,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(210, 489);
+            this.label9.Location = new System.Drawing.Point(257, 468);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 17);
             this.label9.TabIndex = 41;
@@ -294,7 +294,7 @@
             this.pictureBox2.Image = global::HALKEY.Properties.Resources.assign;
             this.pictureBox2.Location = new System.Drawing.Point(209, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(194, 211);
+            this.pictureBox2.Size = new System.Drawing.Size(180, 190);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 52;
             this.pictureBox2.TabStop = false;
@@ -305,7 +305,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(10, 489);
+            this.label8.Location = new System.Drawing.Point(57, 468);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 41;
@@ -325,7 +325,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 1108);
+            this.label3.Location = new System.Drawing.Point(-86, 1108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 19);
             this.label3.TabIndex = 41;
@@ -335,7 +335,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(209, 217);
+            this.label7.Location = new System.Drawing.Point(257, 196);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 17);
             this.label7.TabIndex = 41;
@@ -347,7 +347,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(9, 217);
+            this.label4.Location = new System.Drawing.Point(57, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 17);
             this.label4.TabIndex = 41;
@@ -363,14 +363,14 @@
             this.roomDV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.roomDV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.roomDV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.roomDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.roomDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.roomDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.room_id,
@@ -380,15 +380,15 @@
             this.members,
             this.update,
             this.delete});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.roomDV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.roomDV.DefaultCellStyle = dataGridViewCellStyle3;
             this.roomDV.EnableHeadersVisualStyles = false;
             this.roomDV.Location = new System.Drawing.Point(12, 191);
             this.roomDV.Name = "roomDV";
@@ -405,8 +405,8 @@
             // 
             this.room_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.room_id.DataPropertyName = "room_id";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
-            this.room_id.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 8);
+            this.room_id.DefaultCellStyle = dataGridViewCellStyle2;
             this.room_id.HeaderText = "ID";
             this.room_id.Name = "room_id";
             this.room_id.ReadOnly = true;
@@ -711,8 +711,8 @@
             this.Text = "RoomModuke";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.viewPanel.ResumeLayout(false);
+            this.viewPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -746,7 +746,7 @@
         private Button saveBtn;
         private Label label2;
         private DataGridView roomDV;
-        private Panel panel2;
+        private Panel viewPanel;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Label label7;

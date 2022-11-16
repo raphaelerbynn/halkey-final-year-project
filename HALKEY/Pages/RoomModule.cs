@@ -15,6 +15,7 @@ namespace HALKEY.Pages
     {
         SqlConnection conn = new SqlConnection(DbConn.connString);
         private string id;
+        private string query;
         byte[] img;
         List<byte[]> roomMemberPics = new List<byte[]>();
         List<string> roomMembers = new List<string>();
@@ -22,7 +23,7 @@ namespace HALKEY.Pages
         public RoomModule()
         {
             InitializeComponent();
-            string query = "SELECT room_id, number, block, capacity FROM Room";
+            query = "SELECT room_id, number, block, capacity FROM Room";
             DbConn.fillTable(query, roomDV, conn);
             columnOrder();
         }
@@ -49,9 +50,9 @@ namespace HALKEY.Pages
                 conn.Open();
 
                 //System.Diagnostics.Debug.WriteLine(Encoding.Default.GetString(imgByte));
-                if (room_id == null)
+                if (saveBtn.Enabled)
                 {
-                    string query = "INSERT INTO Room (room_id, number, capacity, block) VALUES('" + room_id + "', '" + roomNumBar.Value + "', '" + capacityTb.Text + "', '" + blockTb.Text + "')";
+                    query = "INSERT INTO Room (room_id, number, capacity, block) VALUES('" + room_id + "', '" + roomNumBar.Value + "', '" + capacityTb.Text + "', '" + blockTb.Text + "')";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
@@ -59,10 +60,16 @@ namespace HALKEY.Pages
                 }
                 else
                 {
-                    string query = "UPDATE Room SET room_id='" + room_id + "', number='" + roomNumBar.Value + "', capacity='" + capacityTb.Text + "', block='" + blockTb.Text + "' WHERE room_id='" + id + "'";
-                    
+                    query = "UPDATE Student SET room_id=NULL WHERE room_id='" + id + "'";
+
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
+
+                    query = "UPDATE Room SET room_id='" + room_id + "', number='" + roomNumBar.Value + "', capacity='" + capacityTb.Text + "', block='" + blockTb.Text + "' WHERE room_id='" + id + "'";
+                    
+                    cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+
                     MessageBox.Show("Data updated successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                 }
@@ -79,9 +86,12 @@ namespace HALKEY.Pages
                 conn.Close();
                 if (!ex.Message.Contains("Violation of PRIMARY KEY"))
                 {
-
                     //MessageBox.Show("ID of room already exist", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     MessageBox.Show(ex.Message);
+                }
+                else
+                {
+                    MessageBox.Show("ID of room already exist", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -157,16 +167,37 @@ namespace HALKEY.Pages
                     conn.Close();
                 }
                 catch { }
+
+                int i = 1;
+                foreach(Control c in viewPanel.Controls)
+                {
+                    try
+                    {
+                        bool lbl = false;
+                        bool picBox = false;
+                        if (int.Parse(c.Tag?.ToString()) == i)
+                        {
+
+                            if (roomMembers.Count > 0 && c is Label)
+                            {
+                                ((Label)c).Text = roomMembers[i].ToString();
+                            }
+
+                            if (roomMembers.Count > 0 && c is PictureBox) 
+                            { 
+                            
+                                MemoryStream ms = new MemoryStream(roomMemberPics[i]);
+                                ((PictureBox)c).Image = new Bitmap(ms);
+                            }
+                            MessageBox.Show(i.ToString());
+                            
+                            i++;
+                        }
+                    }catch { }
+                }
             }
         }
 
-        /* 
-         if (!DBNull.Value.Equals(reader["passport_pic"]))
-                    {
-                        byte[] imgByte = (byte[])reader["passport_pic"];
-                        MemoryStream ms = new MemoryStream(imgByte);
-                        passportPic.Image = new Bitmap(ms);
-                    }
-         */
+
     }
 }

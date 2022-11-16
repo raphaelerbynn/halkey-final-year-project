@@ -55,7 +55,9 @@ namespace HALKEY.Pages
 
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                Home home = (Home)Application.OpenForms["Home"];
+                home.Close();
+
                 Login login = (Login)Application.OpenForms["Login"];
                 login.Show();
             }
