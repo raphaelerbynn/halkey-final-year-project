@@ -20,6 +20,7 @@ namespace HALKEY.Pages
         {
             InitializeComponent();
             getProfileDetails();
+            totalUpdate();
         }
 
         private void getProfileDetails()
@@ -61,6 +62,50 @@ namespace HALKEY.Pages
                 Login login = (Login)Application.OpenForms["Login"];
                 login.Show();
             }
+        }
+
+        private void totalUpdate()
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Student", conn);
+                studentLbl.Text = cmd.ExecuteScalar().ToString();
+                
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Room", conn);
+                roomLbl.Text = cmd.ExecuteScalar().ToString();
+                
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Report", conn);
+                reportLbl.Text = cmd.ExecuteScalar().ToString();
+                //System.Diagnostics.Debug.WriteLine("Printing the i=" + totalstundet);
+
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE level='100'", conn);
+                l100Lbl.Text = cmd.ExecuteScalar().ToString();
+
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE level='200'", conn);
+                l200Lbl.Text = cmd.ExecuteScalar().ToString();
+
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE level='300'", conn);
+                l300Lbl.Text = cmd.ExecuteScalar().ToString();
+
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE level='400'", conn);
+                l400Lbl.Text = cmd.ExecuteScalar().ToString();
+
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE level='500'", conn);
+                l500Lbl.Text = cmd.ExecuteScalar().ToString();
+
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE level='600'", conn);
+                l600Lbl.Text = cmd.ExecuteScalar().ToString();
+                
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE category='600'", conn);
+                postgradLbl.Text = cmd.ExecuteScalar().ToString();
+
+                conn.Close();   
+            }catch {
+                conn.Close();
+            }
+
         }
     }
 }

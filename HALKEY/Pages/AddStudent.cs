@@ -106,8 +106,8 @@ namespace HALKEY.Pages
                     }
                     //System.Diagnostics.Debug.WriteLine(Encoding.Default.GetString(imgByte));
                     conn.Open();
-                    string query = "INSERT INTO Student VALUES(@student_id, @fname, @mname, @lname, @gender, " +
-                        "@emergency_contact, @programme, @category, @level, @level, @passport_pic, @date_registered," +
+                    string query = "INSERT INTO Student VALUES(@student_id, @fname, @mname, @lname, @gender, " + "@contact, "+
+                        "@emergency_contact, @programme, @category, @level, @passport_pic, @date_registered," +
                         " @room_id)";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
