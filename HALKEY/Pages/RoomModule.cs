@@ -151,6 +151,10 @@ namespace HALKEY.Pages
 
             if (roomDV.Columns[e.ColumnIndex].Name == "members" && e.RowIndex >= 0)
             {
+                roomMembers.Clear();
+                roomMemberPics.Clear();
+
+                int capacity = int.Parse(row.Cells["capacity"].Value.ToString());
                 string query = "SELECT passport_pic, fname + ' ' + mname + ' ' + lname AS name FROM Student WHERE room_id='"+id+"'";
                 try
                 {
@@ -168,35 +172,74 @@ namespace HALKEY.Pages
                 }
                 catch { }
 
-                int i = 1;
-                foreach(Control c in viewPanel.Controls)
+                /*int t = 1;
+                foreach (Control lbl in viewPanel.Controls)
                 {
-                    try
+                    int i = 0;
+                    if (lbl is Label)
                     {
-                        bool lbl = false;
-                        bool picBox = false;
-                        if (int.Parse(c.Tag?.ToString()) == i)
+                        lbl.Text = "---";
+                        if (lbl.Tag != null)
                         {
-
-                            if (roomMembers.Count > 0 && c is Label)
+                            if (int.Parse(lbl.Tag?.ToString()) == t)
                             {
-                                ((Label)c).Text = roomMembers[i].ToString();
+                                lbl.Text = roomMembers[i];
+                                i++;
                             }
-
-                            if (roomMembers.Count > 0 && c is PictureBox) 
-                            { 
-                            
-                                MemoryStream ms = new MemoryStream(roomMemberPics[i]);
-                                ((PictureBox)c).Image = new Bitmap(ms);
-                            }
-                            MessageBox.Show(i.ToString());
-                            
-                            i++;
+                            t++;
                         }
-                    }catch { }
+                    }
+                   
+                }*/
+
+                for (int i = 1; i <= capacity * 2; i++)
+                {
+                    int a = 0;
+                    foreach (Control c in viewPanel.Controls)
+                    {
+                        try
+                        {
+                            if (c.Tag != null)
+                            {
+                                if (int.Parse(c.Tag?.ToString()) == i)
+                                {
+
+                                    if (i <= roomMembers.Count && c is Label)
+                                    {
+                                        ((Label)c).Text = roomMembers[i - 1].ToString();
+                                        a++;
+                                    }
+
+                                    if (i <= roomMembers.Count && c is PictureBox)
+                                    {
+                                        MemoryStream ms = new MemoryStream(roomMemberPics[i - 1]);
+                                        ((PictureBox)c).Image = new Bitmap(ms);
+                                        a++;
+                                    }
+
+                                    Console.WriteLine(i.ToString());
+                                    if (a == 2)
+                                    {
+                                        a = 0;
+                                        continue;
+                                    }
+
+                                    if (i > roomMembers.Count)
+                                    {
+                                        break;
+                                    }
+                                }
+                                System.Diagnostics.Debug.WriteLine("Printing the i=" + i);
+
+                            }
+                        }
+                        catch { }
+
+                    }
                 }
             }
         }
+        
 
 
     }

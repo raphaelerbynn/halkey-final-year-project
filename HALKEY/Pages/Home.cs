@@ -176,6 +176,8 @@ namespace HALKEY.Pages
 
         private void rptBtn_Click(object sender, EventArgs e)
         {
+            openNewPage.OpenChildForm(new ReportModule(), bodyPanel);
+
             dashBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             stntBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             wkrBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
