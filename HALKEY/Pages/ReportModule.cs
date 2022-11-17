@@ -20,7 +20,7 @@ namespace HALKEY.Pages
         public ReportModule()
         {
             InitializeComponent();
-            query = "SELECT report_id, room, reporter, title, status, FORMAT(date, 'dd-MMM-yy hh:mm tt') AS date FROM Report";
+            query = "SELECT report_id, room, reporter, title, status, problem, FORMAT(date, 'dd-MMM-yy hh:mm tt') AS date FROM Report";
             DbConn.fillTable(query, roomDV, conn);
             columnOrder();
         }
@@ -52,7 +52,7 @@ namespace HALKEY.Pages
 
             if (roomDV.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
             {
-                string message = "Do you want to delete room " + id + "?";
+                string message = "Do you want to delete report " + id + "?";
                 MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, "", deleteAction);
                 if (result == DialogResult.Yes)
@@ -61,7 +61,7 @@ namespace HALKEY.Pages
                     try
                     {
                         conn.Open();
-                        string query = "DELETE FROM Report WHERE room_id='" + id + "'";
+                        string query = "DELETE FROM Report WHERE report_id='" + id + "'";
                         SqlCommand cmd = new SqlCommand(query, conn);
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -75,11 +75,26 @@ namespace HALKEY.Pages
 
                 }
             }
+
+            if (roomDV.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
+            {
+                solvedBtn.Visible = true;
+                if (row.Cells["status"].Value.ToString() == "SOLVED")
+                {
+                    solvedBtn.Enabled = false;
+                }
+                else
+                {
+                    solvedBtn.Enabled = true;
+                }
+                problemTb.Text = row.Cells["problem"].Value.ToString();
+
+            }
         }
 
         private void roomDV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if(e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 string state = e.Value.ToString();
                 System.Diagnostics.Debug.WriteLine("Printing the i=" + state);
@@ -89,7 +104,7 @@ namespace HALKEY.Pages
                     e.CellStyle.ForeColor = Color.White;
                     e.CellStyle.SelectionBackColor = Color.IndianRed;
                 }
-                else
+                else if (state == "SOLVED")
                 {
                     e.CellStyle.BackColor = Color.Lime;
                     e.CellStyle.SelectionForeColor = Color.White;
@@ -114,7 +129,7 @@ namespace HALKEY.Pages
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Report ticked successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    query = "SELECT report_id, room, reporter, title, status, FORMAT(date, 'dd-MMM-yy hh:mm tt') AS date FROM Report";
+                    query = "SELECT report_id, room, reporter, title, status, problem, FORMAT(date, 'dd-MMM-yy hh:mm tt') AS date FROM Report";
                     DbConn.fillTable(query, roomDV, conn);
                 }
 

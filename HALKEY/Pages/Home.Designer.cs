@@ -31,7 +31,6 @@
             this.menuPanel = new System.Windows.Forms.Panel();
             this.rptBtn = new System.Windows.Forms.Button();
             this.rmsBtn = new System.Windows.Forms.Button();
-            this.wkrBtn = new System.Windows.Forms.Button();
             this.dashBtn = new System.Windows.Forms.Button();
             this.stntBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.PictureBox();
@@ -48,7 +47,6 @@
             // 
             this.menuPanel.Controls.Add(this.rptBtn);
             this.menuPanel.Controls.Add(this.rmsBtn);
-            this.menuPanel.Controls.Add(this.wkrBtn);
             this.menuPanel.Controls.Add(this.dashBtn);
             this.menuPanel.Controls.Add(this.stntBtn);
             this.menuPanel.Controls.Add(this.closeBtn);
@@ -68,11 +66,11 @@
             this.rptBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rptBtn.ForeColor = System.Drawing.Color.White;
             this.rptBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.rptBtn.Location = new System.Drawing.Point(737, 34);
+            this.rptBtn.Location = new System.Drawing.Point(699, 33);
             this.rptBtn.Name = "rptBtn";
-            this.rptBtn.Size = new System.Drawing.Size(170, 53);
+            this.rptBtn.Size = new System.Drawing.Size(222, 53);
             this.rptBtn.TabIndex = 2;
-            this.rptBtn.Text = "REPORTs";
+            this.rptBtn.Text = "REPORTS";
             this.rptBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rptBtn.UseVisualStyleBackColor = true;
             this.rptBtn.Click += new System.EventHandler(this.rptBtn_Click);
@@ -85,31 +83,14 @@
             this.rmsBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rmsBtn.ForeColor = System.Drawing.Color.White;
             this.rmsBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.rmsBtn.Location = new System.Drawing.Point(561, 34);
+            this.rmsBtn.Location = new System.Drawing.Point(471, 33);
             this.rmsBtn.Name = "rmsBtn";
-            this.rmsBtn.Size = new System.Drawing.Size(170, 53);
+            this.rmsBtn.Size = new System.Drawing.Size(222, 53);
             this.rmsBtn.TabIndex = 2;
             this.rmsBtn.Text = "ROOMS";
             this.rmsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rmsBtn.UseVisualStyleBackColor = true;
             this.rmsBtn.Click += new System.EventHandler(this.rmsBtn_Click);
-            // 
-            // wkrBtn
-            // 
-            this.wkrBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.wkrBtn.FlatAppearance.BorderSize = 0;
-            this.wkrBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wkrBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.wkrBtn.ForeColor = System.Drawing.Color.White;
-            this.wkrBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.wkrBtn.Location = new System.Drawing.Point(385, 34);
-            this.wkrBtn.Name = "wkrBtn";
-            this.wkrBtn.Size = new System.Drawing.Size(170, 53);
-            this.wkrBtn.TabIndex = 2;
-            this.wkrBtn.Text = "WORKERS";
-            this.wkrBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.wkrBtn.UseVisualStyleBackColor = true;
-            this.wkrBtn.Click += new System.EventHandler(this.wkrBtn_Click);
             // 
             // dashBtn
             // 
@@ -119,9 +100,9 @@
             this.dashBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dashBtn.ForeColor = System.Drawing.Color.DimGray;
             this.dashBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.dashBtn.Location = new System.Drawing.Point(33, 34);
+            this.dashBtn.Location = new System.Drawing.Point(15, 33);
             this.dashBtn.Name = "dashBtn";
-            this.dashBtn.Size = new System.Drawing.Size(170, 53);
+            this.dashBtn.Size = new System.Drawing.Size(222, 53);
             this.dashBtn.TabIndex = 2;
             this.dashBtn.Text = "DASHBOARD";
             this.dashBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -136,9 +117,9 @@
             this.stntBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.stntBtn.ForeColor = System.Drawing.Color.White;
             this.stntBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.stntBtn.Location = new System.Drawing.Point(209, 34);
+            this.stntBtn.Location = new System.Drawing.Point(243, 33);
             this.stntBtn.Name = "stntBtn";
-            this.stntBtn.Size = new System.Drawing.Size(170, 53);
+            this.stntBtn.Size = new System.Drawing.Size(222, 53);
             this.stntBtn.TabIndex = 2;
             this.stntBtn.Text = "STUDENTS";
             this.stntBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -211,7 +192,6 @@
         private Panel bodyPanel;
         private Button rptBtn;
         private Button rmsBtn;
-        private Button wkrBtn;
         private Button dashBtn;
         private Button stntBtn;
         private PictureBox closeBtn;

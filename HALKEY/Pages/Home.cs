@@ -63,17 +63,12 @@ namespace HALKEY.Pages
         private void dashBtn_Click(object sender, EventArgs e)
         {
             stntBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
-            wkrBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rptBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rmsBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
 
             if (stntBtn.ForeColor == Color.DimGray)
             {
                 stntBtn.ForeColor = Color.White;
-            }
-            else if (wkrBtn.ForeColor == Color.DimGray)
-            {
-                wkrBtn.ForeColor = Color.White;
             }
             else if (rmsBtn.ForeColor == Color.DimGray)
             {
@@ -93,17 +88,13 @@ namespace HALKEY.Pages
 
             dashBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             stntBtn.BackColor = Color.AliceBlue;
-            wkrBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rptBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rmsBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
 
             if (dashBtn.ForeColor == Color.DimGray)
             {
                 dashBtn.ForeColor = Color.White;
-            }
-            else if (wkrBtn.ForeColor == Color.DimGray)
-            {
-                wkrBtn.ForeColor = Color.White;
+            
             }
             else if (rmsBtn.ForeColor == Color.DimGray)
             {
@@ -116,34 +107,7 @@ namespace HALKEY.Pages
             stntBtn.ForeColor = Color.DimGray;
         }
 
-        private void wkrBtn_Click(object sender, EventArgs e)
-        {
-            openNewPage.OpenChildForm(new WorkersModule(), bodyPanel);
-
-            dashBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
-            stntBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
-            wkrBtn.BackColor = Color.AliceBlue;
-            rptBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
-            rmsBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
-
-            if (stntBtn.ForeColor == Color.DimGray)
-            {
-                stntBtn.ForeColor = Color.White;
-            }
-            else if (dashBtn.ForeColor == Color.DimGray)
-            {
-                dashBtn.ForeColor = Color.White;
-            }
-            else if (rmsBtn.ForeColor == Color.DimGray)
-            {
-                rmsBtn.ForeColor = Color.White;
-            }
-            else if (rptBtn.ForeColor == Color.DimGray)
-            {
-                rptBtn.ForeColor = Color.White;
-            }
-            wkrBtn.ForeColor = Color.DimGray;
-        }
+        
 
         private void rmsBtn_Click(object sender, EventArgs e)
         {
@@ -151,17 +115,12 @@ namespace HALKEY.Pages
 
             dashBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             stntBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
-            wkrBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rptBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rmsBtn.BackColor = Color.AliceBlue;
 
             if (dashBtn.ForeColor == Color.DimGray)
             {
                 dashBtn.ForeColor = Color.White;
-            }
-            else if (wkrBtn.ForeColor == Color.DimGray)
-            {
-                wkrBtn.ForeColor = Color.White;
             }
             else if (stntBtn.ForeColor == Color.DimGray)
             {
@@ -180,17 +139,12 @@ namespace HALKEY.Pages
 
             dashBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             stntBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
-            wkrBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rptBtn.BackColor = Color.AliceBlue;
             rmsBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
 
             if (dashBtn.ForeColor == Color.DimGray)
             {
                 dashBtn.ForeColor = Color.White;
-            }
-            else if (wkrBtn.ForeColor == Color.DimGray)
-            {
-                wkrBtn.ForeColor = Color.White;
             }
             else if (rmsBtn.ForeColor == Color.DimGray)
             {

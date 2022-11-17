@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.roomDV = new System.Windows.Forms.DataGridView();
             this.report_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.problem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reporter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -180,6 +181,7 @@
             this.roomDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.report_id,
+            this.problem,
             this.room,
             this.reporter,
             this.title,
@@ -219,6 +221,14 @@
             this.report_id.Name = "report_id";
             this.report_id.ReadOnly = true;
             this.report_id.Width = 114;
+            // 
+            // problem
+            // 
+            this.problem.DataPropertyName = "problem";
+            this.problem.HeaderText = "prob";
+            this.problem.Name = "problem";
+            this.problem.ReadOnly = true;
+            this.problem.Visible = false;
             // 
             // room
             // 
@@ -321,6 +331,7 @@
         private Label label2;
         private Button solvedBtn;
         private DataGridViewTextBoxColumn report_id;
+        private DataGridViewTextBoxColumn problem;
         private DataGridViewTextBoxColumn room;
         private DataGridViewTextBoxColumn reporter;
         private DataGridViewTextBoxColumn title;
