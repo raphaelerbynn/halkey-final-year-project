@@ -63,6 +63,10 @@ namespace HALKEY.Pages
                         catch (SqlException ex)
                         {
                             System.Diagnostics.Debug.WriteLine(ex.Message);
+
+                            //MessageBox.Show(ex.ToString());
+                            MessageBox.Show(Directory.GetCurrentDirectory());
+
                         }
                         catch (Exception ex)
                         {

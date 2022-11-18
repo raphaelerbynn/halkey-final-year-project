@@ -204,10 +204,17 @@ namespace HALKEY.Pages
                                 if (int.Parse(c.Tag?.ToString()) == i)
                                 {
 
-                                    if (i <= roomMembers.Count && c is Label)
+                                    if (c is Label)
                                     {
-                                        ((Label)c).Text = roomMembers[i - 1].ToString();
-                                        a++;
+                                        if (i <= roomMembers.Count)
+                                        {
+                                            ((Label)c).Text = roomMembers[i - 1].ToString();
+                                            a++;
+                                        }
+                                        else
+                                        {
+                                            ((Label)c).Text = "---";
+                                        }
                                     }
 
                                     if (i <= roomMembers.Count && c is PictureBox)
@@ -224,10 +231,10 @@ namespace HALKEY.Pages
                                         continue;
                                     }
 
-                                    if (i > roomMembers.Count)
+                                    /*if (i > roomMembers.Count)
                                     {
                                         break;
-                                    }
+                                    }*/
                                 }
                                 System.Diagnostics.Debug.WriteLine("Printing the i=" + i);
 

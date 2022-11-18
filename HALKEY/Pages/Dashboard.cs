@@ -15,13 +15,17 @@ namespace HALKEY.Pages
     {
 
         SqlConnection conn = new SqlConnection(DbConn.connString);
+        List<string> issues = new List<string>();
 
         public Dashboard()
         {
             InitializeComponent();
             getProfileDetails();
             totalUpdate();
+            unresovedReport();
+            System.Diagnostics.Debug.WriteLine(string.Join(",", issues));
         }
+                
 
         private void getProfileDetails()
         {
@@ -64,6 +68,28 @@ namespace HALKEY.Pages
             }
         }
 
+        private void unresovedReport()
+        {
+            for(int i=0; i < 7; i++)
+            {
+                foreach(Control c in reportPanel.Controls)
+                {
+                    if(c is Label && c.Tag != null)
+                    {
+                        if(int.Parse(c.Tag?.ToString()) == i)
+                        {
+                            c.Text = "------";
+                        }
+
+                        if(i < issues.Count)
+                        {
+                            c.Text = issues[i];
+                        }
+                    }
+                }
+            }
+        }
+
         private void totalUpdate()
         {
             try
@@ -98,9 +124,16 @@ namespace HALKEY.Pages
                 cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE level='600'", conn);
                 l600Lbl.Text = cmd.ExecuteScalar().ToString();
                 
-                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE category='600'", conn);
+                cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE category='POSTGRADUATE'", conn);
                 postgradLbl.Text = cmd.ExecuteScalar().ToString();
-
+                
+                cmd = new SqlCommand("SELECT problem FROM Report WHERE status='UNSOLVED' LIMIT 6", conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    issues.Add(reader["problem"].ToString());
+                }
+                reader.Close();
                 conn.Close();   
             }catch {
                 conn.Close();

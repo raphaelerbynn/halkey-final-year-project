@@ -10,8 +10,17 @@ namespace HALKEY
 {
     internal static class DbConn
     {
-        public static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MOUNTAIN\Documents\Halkey_Db.mdf;Integrated Security = True; Connect Timeout = 30";
+        public static  string connectionString()
+        {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Halkey_Db.mdf;Integrated Security = True; Connect Timeout = 30";
 
+        }
+
+        private static string location = Directory.GetCurrentDirectory();
+        public static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+location+@"\HalkeyDb.mdf;Integrated Security=True;Connect Timeout=30";
+        //public static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MOUNTAIN\Documents\Halkey_Db.mdf;Integrated Security = True; Connect Timeout = 30";
+        
         public static void fillTable(string query, DataGridView DV, SqlConnection conn)
         {
             try

@@ -19,6 +19,9 @@ namespace HALKEY
             bgPanel.BackColor = ColorTranslator.FromHtml(Colors.bgLight);
             loadPanel.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             loadPanel.Width = 0;
+
+
+            System.Diagnostics.Debug.WriteLine("------------- ");
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

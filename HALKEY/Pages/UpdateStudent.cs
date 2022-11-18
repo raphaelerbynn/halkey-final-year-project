@@ -109,18 +109,21 @@ namespace HALKEY.Pages
                         "room_id = '" + roomCb.Text + "' " +
                         " WHERE student_id = '" + idTb.Text + "' ";
 
-                    string query1 = "UPDATE Student SET passport_pic=@img WHERE student_id = '" + id + "'";
+                    string query1 = "UPDATE Student SET passport_pic=@img WHERE student_id = '" + idTb.Text + "'";
 
                     conn.Open();
                     cmd = new SqlCommand(query0, conn);
+                    cmd.Parameters.AddWithValue("@img", imgByte);
                     cmd.ExecuteNonQuery();
-                    conn.Close();
+                    
 
-                    conn.Open();
+                    
                     cmd = new SqlCommand(query1, conn);
                     cmd.Parameters.AddWithValue("@img", imgByte);
                     cmd.ExecuteNonQuery();
                     conn.Close();
+
+                    MessageBox.Show("Updates successfully!!!");
 
                 }
                 catch (Exception ex)

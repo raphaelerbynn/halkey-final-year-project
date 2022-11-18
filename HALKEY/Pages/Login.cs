@@ -64,7 +64,10 @@ namespace HALKEY
 
                 conn.Close();
             }
-            catch{  }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Put database in path: " + Directory.GetCurrentDirectory());
+            }
 
             return value;
         }

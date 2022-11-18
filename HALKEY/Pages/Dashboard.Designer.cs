@@ -33,7 +33,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.reportPanel = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -71,6 +71,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.l200Lbl = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.postgradLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.l100Lbl = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -81,11 +84,8 @@
             this.usernameTb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.postgradLbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.bodyPanel.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.reportPanel.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -94,10 +94,10 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bodyPanel
@@ -106,7 +106,7 @@
             this.bodyPanel.Controls.Add(this.panel15);
             this.bodyPanel.Controls.Add(this.panel14);
             this.bodyPanel.Controls.Add(this.panel13);
-            this.bodyPanel.Controls.Add(this.panel11);
+            this.bodyPanel.Controls.Add(this.reportPanel);
             this.bodyPanel.Controls.Add(this.panel4);
             this.bodyPanel.Controls.Add(this.panel3);
             this.bodyPanel.Controls.Add(this.panel10);
@@ -159,28 +159,28 @@
             this.panel13.Size = new System.Drawing.Size(693, 2);
             this.panel13.TabIndex = 6;
             // 
-            // panel11
+            // reportPanel
             // 
-            this.panel11.AutoScroll = true;
-            this.panel11.Controls.Add(this.label39);
-            this.panel11.Controls.Add(this.label37);
-            this.panel11.Controls.Add(this.label35);
-            this.panel11.Controls.Add(this.label31);
-            this.panel11.Controls.Add(this.label29);
-            this.panel11.Controls.Add(this.label27);
-            this.panel11.Controls.Add(this.label25);
-            this.panel11.Controls.Add(this.label38);
-            this.panel11.Controls.Add(this.label36);
-            this.panel11.Controls.Add(this.label34);
-            this.panel11.Controls.Add(this.label32);
-            this.panel11.Controls.Add(this.label28);
-            this.panel11.Controls.Add(this.label26);
-            this.panel11.Controls.Add(this.label24);
-            this.panel11.Controls.Add(this.panel12);
-            this.panel11.Location = new System.Drawing.Point(238, 222);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(666, 346);
-            this.panel11.TabIndex = 5;
+            this.reportPanel.AutoScroll = true;
+            this.reportPanel.Controls.Add(this.label39);
+            this.reportPanel.Controls.Add(this.label37);
+            this.reportPanel.Controls.Add(this.label35);
+            this.reportPanel.Controls.Add(this.label31);
+            this.reportPanel.Controls.Add(this.label29);
+            this.reportPanel.Controls.Add(this.label27);
+            this.reportPanel.Controls.Add(this.label25);
+            this.reportPanel.Controls.Add(this.label38);
+            this.reportPanel.Controls.Add(this.label36);
+            this.reportPanel.Controls.Add(this.label34);
+            this.reportPanel.Controls.Add(this.label32);
+            this.reportPanel.Controls.Add(this.label28);
+            this.reportPanel.Controls.Add(this.label26);
+            this.reportPanel.Controls.Add(this.label24);
+            this.reportPanel.Controls.Add(this.panel12);
+            this.reportPanel.Location = new System.Drawing.Point(238, 222);
+            this.reportPanel.Name = "reportPanel";
+            this.reportPanel.Size = new System.Drawing.Size(666, 346);
+            this.reportPanel.TabIndex = 5;
             // 
             // label39
             // 
@@ -579,6 +579,36 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Lvl 200 Students";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.postgradLbl);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(24, 101);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(196, 104);
+            this.panel2.TabIndex = 4;
+            // 
+            // postgradLbl
+            // 
+            this.postgradLbl.AutoSize = true;
+            this.postgradLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.postgradLbl.Location = new System.Drawing.Point(13, 44);
+            this.postgradLbl.Name = "postgradLbl";
+            this.postgradLbl.Size = new System.Drawing.Size(58, 47);
+            this.postgradLbl.TabIndex = 0;
+            this.postgradLbl.Text = "20";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(13, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Postgraduate Students";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -685,36 +715,6 @@
             this.profilePic.TabIndex = 0;
             this.profilePic.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.postgradLbl);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(24, 101);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 104);
-            this.panel2.TabIndex = 4;
-            // 
-            // postgradLbl
-            // 
-            this.postgradLbl.AutoSize = true;
-            this.postgradLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.postgradLbl.Location = new System.Drawing.Point(13, 44);
-            this.postgradLbl.Name = "postgradLbl";
-            this.postgradLbl.Size = new System.Drawing.Size(58, 47);
-            this.postgradLbl.TabIndex = 0;
-            this.postgradLbl.Text = "20";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(13, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Postgraduate Students";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -727,8 +727,8 @@
             this.Text = "Dashboard";
             this.bodyPanel.ResumeLayout(false);
             this.bodyPanel.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.reportPanel.ResumeLayout(false);
+            this.reportPanel.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -745,13 +745,13 @@
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -763,7 +763,7 @@
         private Panel panel15;
         private Panel panel14;
         private Panel panel13;
-        private Panel panel11;
+        private Panel reportPanel;
         private Label label39;
         private Label label37;
         private Label label35;

@@ -33,7 +33,7 @@ namespace HALKEY.Pages
             try
             {
                 conn.Open();
-                string query = "SELECT *, FORMAT(date_registered, 'dd-MMM-yyyy') AS date FROM Student WHERE student_id='"+student_id+"'";
+                string query = "SELECT *, passport_pic,FORMAT(date_registered, 'dd-MMM-yyyy') AS date FROM Student WHERE student_id='"+student_id+"'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
