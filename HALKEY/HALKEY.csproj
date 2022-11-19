@@ -16,7 +16,30 @@
     <Description>A hall key management system</Description>
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <AssemblyName>HALKEY</AssemblyName>
+    <RootNamespace>HALKEY</RootNamespace>
+    <ApplicationIcon>halkey_logo.ico</ApplicationIcon>
+    <Copyright>Copyright 2022</Copyright>
+    <PackageIcon>halkey_logo.ico</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/raphaelerbynn/halkey-final-year-project</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="halkey_logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="C:\Users\MOUNTAIN\Desktop\Perfect Peace System\icons\halkey_logo.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />

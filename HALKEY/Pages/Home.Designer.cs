@@ -62,10 +62,10 @@
             this.rptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rptBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rptBtn.ForeColor = System.Drawing.Color.White;
-            this.rptBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.rptBtn.Location = new System.Drawing.Point(699, 33);
+            this.rptBtn.Image = global::HALKEY.Properties.Resources.report1;
+            this.rptBtn.Location = new System.Drawing.Point(699, 25);
             this.rptBtn.Name = "rptBtn";
-            this.rptBtn.Size = new System.Drawing.Size(222, 53);
+            this.rptBtn.Size = new System.Drawing.Size(222, 61);
             this.rptBtn.TabIndex = 2;
             this.rptBtn.Text = "REPORTS";
             this.rptBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -79,10 +79,10 @@
             this.rmsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rmsBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rmsBtn.ForeColor = System.Drawing.Color.White;
-            this.rmsBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.rmsBtn.Location = new System.Drawing.Point(471, 33);
+            this.rmsBtn.Image = global::HALKEY.Properties.Resources.room;
+            this.rmsBtn.Location = new System.Drawing.Point(471, 25);
             this.rmsBtn.Name = "rmsBtn";
-            this.rmsBtn.Size = new System.Drawing.Size(222, 53);
+            this.rmsBtn.Size = new System.Drawing.Size(222, 61);
             this.rmsBtn.TabIndex = 2;
             this.rmsBtn.Text = "ROOMS";
             this.rmsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

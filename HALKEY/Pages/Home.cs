@@ -48,38 +48,36 @@ namespace HALKEY.Pages
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void maxBtn_Click(object sender, EventArgs e)
-        {
-            if(this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
+        
         private void dashBtn_Click(object sender, EventArgs e)
         {
             stntBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rptBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
             rmsBtn.BackColor = ColorTranslator.FromHtml(Colors.bgDark);
 
+            /*this.dashBtn.Image = global::HALKEY.Properties.Resources.dashboard;//
+            this.stntBtn.Image = global::HALKEY.Properties.Resources.student_boy;
+            this.rmsBtn.Image = global::HALKEY.Properties.Resources.room;
+            this.rptBtn.Image = global::HALKEY.Properties.Resources.report1;*/
+
             if (stntBtn.ForeColor == Color.DimGray)
             {
                 stntBtn.ForeColor = Color.White;
+                this.stntBtn.Image = global::HALKEY.Properties.Resources.student_boy;
             }
             else if (rmsBtn.ForeColor == Color.DimGray)
             {
                 rmsBtn.ForeColor = Color.White;
+                this.rmsBtn.Image = global::HALKEY.Properties.Resources.room;
             }
             else if (rptBtn.ForeColor == Color.DimGray)
             {
                 rptBtn.ForeColor = Color.White;
+                this.rptBtn.Image = global::HALKEY.Properties.Resources.report1;
             }
-
+            this.dashBtn.Image = global::HALKEY.Properties.Resources.dashboard1;
             firstOpen();
+
         }
 
         private void stntBtn_Click(object sender, EventArgs e)
@@ -94,17 +92,22 @@ namespace HALKEY.Pages
             if (dashBtn.ForeColor == Color.DimGray)
             {
                 dashBtn.ForeColor = Color.White;
-            
+                this.dashBtn.Image = global::HALKEY.Properties.Resources.dashboard;
+
             }
             else if (rmsBtn.ForeColor == Color.DimGray)
             {
                 rmsBtn.ForeColor = Color.White;
+                this.rmsBtn.Image = global::HALKEY.Properties.Resources.room;
+
             }
             else if (rptBtn.ForeColor == Color.DimGray)
             {
                 rptBtn.ForeColor = Color.White;
+                this.rptBtn.Image = global::HALKEY.Properties.Resources.report1;
             }
             stntBtn.ForeColor = Color.DimGray;
+            this.stntBtn.Image = global::HALKEY.Properties.Resources.student_boy1;
         }
 
         
@@ -121,16 +124,20 @@ namespace HALKEY.Pages
             if (dashBtn.ForeColor == Color.DimGray)
             {
                 dashBtn.ForeColor = Color.White;
+                this.dashBtn.Image = global::HALKEY.Properties.Resources.dashboard;
             }
             else if (stntBtn.ForeColor == Color.DimGray)
             {
                 stntBtn.ForeColor = Color.White;
+                this.stntBtn.Image = global::HALKEY.Properties.Resources.student_boy;
             }
             else if (rptBtn.ForeColor == Color.DimGray)
             {
                 rptBtn.ForeColor = Color.White;
+                this.rptBtn.Image = global::HALKEY.Properties.Resources.report1;
             }
             rmsBtn.ForeColor = Color.DimGray;
+            this.rmsBtn.Image = global::HALKEY.Properties.Resources.room1;
         }
 
         private void rptBtn_Click(object sender, EventArgs e)
@@ -145,16 +152,20 @@ namespace HALKEY.Pages
             if (dashBtn.ForeColor == Color.DimGray)
             {
                 dashBtn.ForeColor = Color.White;
+                this.dashBtn.Image = global::HALKEY.Properties.Resources.dashboard;
             }
             else if (rmsBtn.ForeColor == Color.DimGray)
             {
                 rmsBtn.ForeColor = Color.White;
+                this.rmsBtn.Image = global::HALKEY.Properties.Resources.room;
             }
             else if (stntBtn.ForeColor == Color.DimGray)
             {
                 stntBtn.ForeColor = Color.White;
+                this.stntBtn.Image = global::HALKEY.Properties.Resources.student_boy;
             }
             rptBtn.ForeColor = Color.DimGray;
+            this.rptBtn.Image = global::HALKEY.Properties.Resources.report;
         }
     }
 }
