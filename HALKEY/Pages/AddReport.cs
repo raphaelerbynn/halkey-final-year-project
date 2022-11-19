@@ -17,7 +17,7 @@ namespace HALKEY.Pages
         public AddReport()
         {
             InitializeComponent();
-
+            comboFill("SELECT room_id FROM Room", roomTb);
         }
 
         private void backLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -65,6 +65,22 @@ namespace HALKEY.Pages
                 MessageBox.Show(ex.ToString());
             }
             
+        }
+
+        private void comboFill(string query, ComboBox cb)
+        {
+            conn.Open();
+
+            //string query = "SELECT room_id FROM Room WHERE current_members<capacity ORDER BY room_id";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                cb.Items.Add(reader[0].ToString());
+            }
+            reader.Close();
+
+            conn.Close();
         }
     }
 }
