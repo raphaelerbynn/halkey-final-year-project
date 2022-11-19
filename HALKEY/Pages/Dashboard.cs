@@ -23,7 +23,7 @@ namespace HALKEY.Pages
             getProfileDetails();
             totalUpdate();
             unresovedReport();
-            MessageBox.Show(string.Join(",", issues));
+           // MessageBox.Show(string.Join(",", issues));
         }
                 
 
@@ -63,7 +63,7 @@ namespace HALKEY.Pages
                 Home home = (Home)Application.OpenForms["Home"];
                 home.Close();
 
-                Login login = (Login)Application.OpenForms["Login"];
+                Loading login = (Loading)Application.OpenForms["Loading"];
                 login.Show();
             }
         }

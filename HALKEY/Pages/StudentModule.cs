@@ -140,9 +140,9 @@ namespace HALKEY.Pages
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
     }

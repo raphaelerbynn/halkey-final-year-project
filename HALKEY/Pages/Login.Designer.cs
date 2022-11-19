@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.incLbl = new System.Windows.Forms.Label();
             this.createAccLink = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loadPanel = new System.Windows.Forms.Panel();
             this.bgPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +50,7 @@
             // 
             this.bgPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bgPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bgPanel.Controls.Add(this.pictureBox2);
             this.bgPanel.Controls.Add(this.incLbl);
             this.bgPanel.Controls.Add(this.createAccLink);
             this.bgPanel.Controls.Add(this.label4);
@@ -63,13 +66,24 @@
             this.bgPanel.Size = new System.Drawing.Size(804, 422);
             this.bgPanel.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::HALKEY.Properties.Resources.lockup_text_white;
+            this.pictureBox2.Location = new System.Drawing.Point(354, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(126, 97);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // incLbl
             // 
             this.incLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.incLbl.AutoSize = true;
             this.incLbl.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.incLbl.ForeColor = System.Drawing.Color.Red;
-            this.incLbl.Location = new System.Drawing.Point(278, 147);
+            this.incLbl.Location = new System.Drawing.Point(278, 208);
             this.incLbl.Name = "incLbl";
             this.incLbl.Size = new System.Drawing.Size(316, 19);
             this.incLbl.TabIndex = 16;
@@ -96,7 +110,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(372, 93);
+            this.label4.Location = new System.Drawing.Point(372, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 37);
             this.label4.TabIndex = 14;
@@ -111,7 +125,7 @@
             this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(115)))), ((int)(((byte)(179)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.ForeColor = System.Drawing.Color.White;
-            this.loginBtn.Location = new System.Drawing.Point(381, 282);
+            this.loginBtn.Location = new System.Drawing.Point(381, 343);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(75, 23);
             this.loginBtn.TabIndex = 13;
@@ -124,7 +138,7 @@
             this.passwordTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passwordTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordTb.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordTb.Location = new System.Drawing.Point(240, 224);
+            this.passwordTb.Location = new System.Drawing.Point(240, 285);
             this.passwordTb.Name = "passwordTb";
             this.passwordTb.PasswordChar = '*';
             this.passwordTb.Size = new System.Drawing.Size(377, 27);
@@ -135,7 +149,7 @@
             this.usernameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usernameTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.usernameTb.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.usernameTb.Location = new System.Drawing.Point(240, 169);
+            this.usernameTb.Location = new System.Drawing.Point(240, 230);
             this.usernameTb.Name = "usernameTb";
             this.usernameTb.Size = new System.Drawing.Size(377, 27);
             this.usernameTb.TabIndex = 12;
@@ -146,7 +160,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(159, 232);
+            this.label2.Location = new System.Drawing.Point(159, 293);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 19);
             this.label2.TabIndex = 10;
@@ -158,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(113, 177);
+            this.label1.Location = new System.Drawing.Point(113, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 19);
             this.label1.TabIndex = 9;
@@ -195,6 +209,7 @@
             this.Text = "Login";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -213,5 +228,6 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

@@ -111,149 +111,154 @@ namespace HALKEY.Pages
 
         private void roomDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = roomDV.Rows[e.RowIndex];
-            id = row.Cells["room_id"].Value.ToString();
-
-            if (roomDV.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+            try
             {
-                string message = "Do you want to delete room " + id + "?";
-                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, "", deleteAction);
-                if (result == DialogResult.Yes)
-                {
+                DataGridViewRow row = roomDV.Rows[e.RowIndex];
+                id = row.Cells["room_id"].Value.ToString();
 
+                if (roomDV.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete room " + id + "?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+
+                        try
+                        {
+                            conn.Open();
+                            string query = "DELETE FROM Room WHERE room_id='" + id + "'";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        roomDV.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show("Room deleted from system");
+
+                    }
+                }
+
+                if (roomDV.Columns[e.ColumnIndex].Name == "update" && e.RowIndex >= 0)
+                {
+                    updateBtn.Enabled = true;
+                    saveBtn.Enabled = false;
+
+                    roomNumBar.Value = int.Parse(row.Cells["room_num"].Value.ToString());
+                    blockTb.Text = (String.IsNullOrWhiteSpace(row.Cells["block"].Value.ToString()) ? "" : row.Cells["block"].Value.ToString()).Trim();
+                    capacityTb.SelectedItem = row.Cells["capacity"].Value.ToString();
+                }
+
+                if (roomDV.Columns[e.ColumnIndex].Name == "members" && e.RowIndex >= 0)
+                {
+                    roomMembers.Clear();
+                    roomMemberPics.Clear();
+
+                    roomLbl.Text = "---";
+                    roomLbl.Text = id;
+                    int capacity = int.Parse(row.Cells["capacity"].Value.ToString());
+                    string query = "SELECT passport_pic, fname + ' ' + mname + ' ' + lname AS name FROM Student WHERE room_id='" + id + "'";
                     try
                     {
                         conn.Open();
-                        string query = "DELETE FROM Room WHERE room_id='" + id + "'";
                         SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.ExecuteNonQuery();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            roomMemberPics.Add((byte[])reader["passport_pic"]);
+                            roomMembers.Add(reader["name"].ToString());
+                        }
+                        reader.Close();
+
                         conn.Close();
                     }
-                    catch (Exception ex)
+                    catch { }
+
+                    /*int t = 1;
+                    foreach (Control lbl in viewPanel.Controls)
                     {
-                        MessageBox.Show(ex.Message);
-                    }
-                    roomDV.Rows.RemoveAt(e.RowIndex);
-                    MessageBox.Show("Room deleted from system");
-
-                }
-            }
-
-            if (roomDV.Columns[e.ColumnIndex].Name == "update" && e.RowIndex >= 0)
-            {
-                updateBtn.Enabled = true;
-                saveBtn.Enabled = false;
-
-                roomNumBar.Value = int.Parse(row.Cells["room_num"].Value.ToString());
-                blockTb.Text = (String.IsNullOrWhiteSpace(row.Cells["block"].Value.ToString()) ? "" : row.Cells["block"].Value.ToString()).Trim();
-                capacityTb.SelectedItem = row.Cells["capacity"].Value.ToString();
-            }
-
-            if (roomDV.Columns[e.ColumnIndex].Name == "members" && e.RowIndex >= 0)
-            {
-                roomMembers.Clear();
-                roomMemberPics.Clear();
-
-                roomLbl.Text = "---";
-                roomLbl.Text = id;
-                int capacity = int.Parse(row.Cells["capacity"].Value.ToString());
-                string query = "SELECT passport_pic, fname + ' ' + mname + ' ' + lname AS name FROM Student WHERE room_id='"+id+"'";
-                try
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        roomMemberPics.Add((byte[])reader["passport_pic"]);
-                        roomMembers.Add(reader["name"].ToString());
-                    }
-                    reader.Close();
-
-                    conn.Close();
-                }
-                catch { }
-
-                /*int t = 1;
-                foreach (Control lbl in viewPanel.Controls)
-                {
-                    int i = 0;
-                    if (lbl is Label)
-                    {
-                        lbl.Text = "---";
-                        if (lbl.Tag != null)
+                        int i = 0;
+                        if (lbl is Label)
                         {
-                            if (int.Parse(lbl.Tag?.ToString()) == t)
+                            lbl.Text = "---";
+                            if (lbl.Tag != null)
                             {
-                                lbl.Text = roomMembers[i];
-                                i++;
-                            }
-                            t++;
-                        }
-                    }
-                   
-                }*/
-
-                for (int i = 1; i <= capacity * 2; i++)
-                {
-                    int a = 0;
-                    foreach (Control c in viewPanel.Controls)
-                    {
-                        try
-                        {
-                            if (c.Tag != null)
-                            {
-                                if (int.Parse(c.Tag?.ToString()) == i)
+                                if (int.Parse(lbl.Tag?.ToString()) == t)
                                 {
-
-                                    if (c is Label)
-                                    {
-                                        if (i <= roomMembers.Count)
-                                        {
-                                            ((Label)c).Text = roomMembers[i - 1].ToString();
-                                            a++;
-                                        }
-                                        else
-                                        {
-                                            ((Label)c).Text = "---";
-                                        }
-                                    }
-
-                                    if (c is PictureBox) {
-                                        if (i <= roomMembers.Count)
-                                        {
-                                            MemoryStream ms = new MemoryStream(roomMemberPics[i - 1]);
-                                            ((PictureBox)c).Image = new Bitmap(ms);
-                                            a++;
-                                        }
-                                        else
-                                        {
-                                            ((PictureBox)c).Image = global::HALKEY.Properties.Resources.assign;
-                                        }
-                                    }
-
-                                    Console.WriteLine(i.ToString());
-                                    if (a == 2)
-                                    {
-                                        a = 0;
-                                        continue;
-                                    }
-
-                                    /*if (i > roomMembers.Count)
-                                    {
-                                        break;
-                                    }*/
+                                    lbl.Text = roomMembers[i];
+                                    i++;
                                 }
-                                System.Diagnostics.Debug.WriteLine("Printing the i=" + i);
-
+                                t++;
                             }
                         }
-                        catch { }
 
+                    }*/
+
+                    for (int i = 1; i <= capacity * 2; i++)
+                    {
+                        int a = 0;
+                        foreach (Control c in viewPanel.Controls)
+                        {
+                            try
+                            {
+                                if (c.Tag != null)
+                                {
+                                    if (int.Parse(c.Tag?.ToString()) == i)
+                                    {
+
+                                        if (c is Label)
+                                        {
+                                            if (i <= roomMembers.Count)
+                                            {
+                                                ((Label)c).Text = roomMembers[i - 1].ToString();
+                                                a++;
+                                            }
+                                            else
+                                            {
+                                                ((Label)c).Text = "---";
+                                            }
+                                        }
+
+                                        if (c is PictureBox)
+                                        {
+                                            if (i <= roomMembers.Count)
+                                            {
+                                                MemoryStream ms = new MemoryStream(roomMemberPics[i - 1]);
+                                                ((PictureBox)c).Image = new Bitmap(ms);
+                                                a++;
+                                            }
+                                            else
+                                            {
+                                                ((PictureBox)c).Image = global::HALKEY.Properties.Resources.assign;
+                                            }
+                                        }
+
+                                        Console.WriteLine(i.ToString());
+                                        if (a == 2)
+                                        {
+                                            a = 0;
+                                            continue;
+                                        }
+
+                                        /*if (i > roomMembers.Count)
+                                        {
+                                            break;
+                                        }*/
+                                    }
+                                    System.Diagnostics.Debug.WriteLine("Printing the i=" + i);
+
+                                }
+                            }
+                            catch { }
+
+                        }
                     }
                 }
             }
+            catch { }
         }
 
         private void searchBtn_Click(object sender, EventArgs e)

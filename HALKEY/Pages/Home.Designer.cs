@@ -96,10 +96,10 @@
             this.dashBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dashBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dashBtn.ForeColor = System.Drawing.Color.DimGray;
-            this.dashBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.dashBtn.Location = new System.Drawing.Point(15, 33);
+            this.dashBtn.Image = global::HALKEY.Properties.Resources.dashboard1;
+            this.dashBtn.Location = new System.Drawing.Point(15, 25);
             this.dashBtn.Name = "dashBtn";
-            this.dashBtn.Size = new System.Drawing.Size(222, 53);
+            this.dashBtn.Size = new System.Drawing.Size(222, 61);
             this.dashBtn.TabIndex = 2;
             this.dashBtn.Text = "DASHBOARD";
             this.dashBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -113,10 +113,10 @@
             this.stntBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stntBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.stntBtn.ForeColor = System.Drawing.Color.White;
-            this.stntBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.stntBtn.Location = new System.Drawing.Point(243, 33);
+            this.stntBtn.Image = global::HALKEY.Properties.Resources.student_boy;
+            this.stntBtn.Location = new System.Drawing.Point(243, 25);
             this.stntBtn.Name = "stntBtn";
-            this.stntBtn.Size = new System.Drawing.Size(222, 53);
+            this.stntBtn.Size = new System.Drawing.Size(222, 61);
             this.stntBtn.TabIndex = 2;
             this.stntBtn.Text = "STUDENTS";
             this.stntBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

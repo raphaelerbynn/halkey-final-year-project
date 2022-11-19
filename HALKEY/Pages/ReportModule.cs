@@ -47,49 +47,53 @@ namespace HALKEY.Pages
 
         private void roomDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = roomDV.Rows[e.RowIndex];
-            id = row.Cells["report_id"].Value.ToString();
-
-            if (roomDV.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+            try
             {
-                string message = "Do you want to delete report " + id + "?";
-                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, "", deleteAction);
-                if (result == DialogResult.Yes)
-                {
+                DataGridViewRow row = roomDV.Rows[e.RowIndex];
+                id = row.Cells["report_id"].Value.ToString();
 
-                    try
+                if (roomDV.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete report " + id + "?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
                     {
-                        conn.Open();
-                        string query = "DELETE FROM Report WHERE report_id='" + id + "'";
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
+
+                        try
+                        {
+                            conn.Open();
+                            string query = "DELETE FROM Report WHERE report_id='" + id + "'";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        roomDV.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show("Report deleted from system");
+
                     }
-                    catch (Exception ex)
+                }
+
+                if (roomDV.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
+                {
+                    solvedBtn.Visible = true;
+                    if (row.Cells["status"].Value.ToString() == "SOLVED")
                     {
-                        MessageBox.Show(ex.Message);
+                        solvedBtn.Enabled = false;
                     }
-                    roomDV.Rows.RemoveAt(e.RowIndex);
-                    MessageBox.Show("Report deleted from system");
+                    else
+                    {
+                        solvedBtn.Enabled = true;
+                    }
+                    problemTb.Text = row.Cells["problem"].Value.ToString();
 
                 }
             }
-
-            if (roomDV.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
-            {
-                solvedBtn.Visible = true;
-                if (row.Cells["status"].Value.ToString() == "SOLVED")
-                {
-                    solvedBtn.Enabled = false;
-                }
-                else
-                {
-                    solvedBtn.Enabled = true;
-                }
-                problemTb.Text = row.Cells["problem"].Value.ToString();
-
-            }
+            catch { }
         }
 
         private void roomDV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

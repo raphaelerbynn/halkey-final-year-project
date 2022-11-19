@@ -29,7 +29,8 @@ namespace HALKEY
                 usernameTb.Text = null;
                 passwordTb.Text = null;
 
-                this.Hide();
+                Loading loading = (Loading)Application.OpenForms["Loading"];
+                loading.Hide();
                 Pages.Home home = new Pages.Home();
                 home.Show();
             }
