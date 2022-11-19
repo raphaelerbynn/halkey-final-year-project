@@ -175,7 +175,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(675, 322);
+            this.label15.Location = new System.Drawing.Point(671, 322);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(105, 13);
             this.label15.TabIndex = 64;

@@ -33,7 +33,7 @@ namespace HALKEY.Pages
             try
             {
                 conn.Open();
-                string query = "SELECT *, passport_pic,FORMAT(date_registered, 'dd-MMM-yyyy') AS date FROM Student WHERE student_id='"+student_id+"'";
+                string query = "SELECT *,FORMAT(date_registered, 'dd-MMM-yyyy') AS date FROM Student WHERE student_id='"+student_id+"'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -48,7 +48,7 @@ namespace HALKEY.Pages
                     categoryLbl.Text = reader["category"].ToString();
                     programLbl.Text = reader["programme"].ToString();
                     levelLbl.Text = reader["level"].ToString();
-                    roomLbl.Text = reader["room"].ToString();
+                    roomLbl.Text = reader["room_id"].ToString();
                     dateLbl.Text = reader["date"].ToString();
                     if (!DBNull.Value.Equals(reader["passport_pic"]))
                     {

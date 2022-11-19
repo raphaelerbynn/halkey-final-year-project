@@ -26,6 +26,7 @@ namespace HALKEY.Pages
             query = "SELECT room_id, number, block, capacity FROM Room";
             DbConn.fillTable(query, roomDV, conn);
             columnOrder();
+            roomLbl.Text = "---";
         }
 
         private void columnOrder()
@@ -154,6 +155,8 @@ namespace HALKEY.Pages
                 roomMembers.Clear();
                 roomMemberPics.Clear();
 
+                roomLbl.Text = "---";
+                roomLbl.Text = id;
                 int capacity = int.Parse(row.Cells["capacity"].Value.ToString());
                 string query = "SELECT passport_pic, fname + ' ' + mname + ' ' + lname AS name FROM Student WHERE room_id='"+id+"'";
                 try
@@ -217,11 +220,17 @@ namespace HALKEY.Pages
                                         }
                                     }
 
-                                    if (i <= roomMembers.Count && c is PictureBox)
-                                    {
-                                        MemoryStream ms = new MemoryStream(roomMemberPics[i - 1]);
-                                        ((PictureBox)c).Image = new Bitmap(ms);
-                                        a++;
+                                    if (c is PictureBox) {
+                                        if (i <= roomMembers.Count)
+                                        {
+                                            MemoryStream ms = new MemoryStream(roomMemberPics[i - 1]);
+                                            ((PictureBox)c).Image = new Bitmap(ms);
+                                            a++;
+                                        }
+                                        else
+                                        {
+                                            ((PictureBox)c).Image = global::HALKEY.Properties.Resources.assign;
+                                        }
                                     }
 
                                     Console.WriteLine(i.ToString());
