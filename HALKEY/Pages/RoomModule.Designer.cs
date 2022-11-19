@@ -492,6 +492,7 @@
             this.clearBtn.TabIndex = 47;
             this.clearBtn.Text = "CLEAR DATA";
             this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // searchBtn
             // 
@@ -509,6 +510,7 @@
             this.searchBtn.TabIndex = 46;
             this.searchBtn.Text = "SEARCH ROOM";
             this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // updateBtn
             // 

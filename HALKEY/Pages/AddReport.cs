@@ -69,18 +69,52 @@ namespace HALKEY.Pages
 
         private void comboFill(string query, ComboBox cb)
         {
-            conn.Open();
-
-            //string query = "SELECT room_id FROM Room WHERE current_members<capacity ORDER BY room_id";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                cb.Items.Add(reader[0].ToString());
-            }
-            reader.Close();
+                conn.Open();
 
-            conn.Close();
+                //string query = "SELECT room_id FROM Room WHERE current_members<capacity ORDER BY room_id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cb.Items.Add(reader[0].ToString());
+                }
+                reader.Close();
+
+                conn.Close();
+            }catch { conn.Close(); }
+        }
+
+        private void getMemners()
+        {
+            if (roomTb.Items.Contains(roomTb.Text))
+            {
+                membersCb.Items.Clear();
+                membersCb.Enabled = true;
+                comboFill("SELECT fname+' '+mname+' '+lname FROM Student WHERE room_id='" + roomTb.Text + "'", membersCb);
+            }
+            else
+            {
+                membersCb.Enabled = false;
+                membersCb.Items.Clear();
+            }
+
+        }
+
+        private void roomTb_TextUpdate(object sender, EventArgs e)
+        {
+            getMemners();
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            clearFeild();
+        }
+
+        private void roomTb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getMemners();
         }
     }
 }

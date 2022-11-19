@@ -89,6 +89,7 @@
             this.clearBtn.TabIndex = 19;
             this.clearBtn.Text = "CLEAR DATA";
             this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // saveBtn
             // 
@@ -124,12 +125,15 @@
             // 
             this.roomTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.roomTb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.roomTb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.roomTb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.roomTb.FormattingEnabled = true;
             this.roomTb.Location = new System.Drawing.Point(233, 392);
             this.roomTb.Name = "roomTb";
             this.roomTb.Size = new System.Drawing.Size(520, 25);
             this.roomTb.TabIndex = 18;
+            this.roomTb.SelectedIndexChanged += new System.EventHandler(this.roomTb_SelectedIndexChanged);
+            this.roomTb.TextUpdate += new System.EventHandler(this.roomTb_TextUpdate);
             // 
             // backLink
             // 

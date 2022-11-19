@@ -22,8 +22,9 @@ namespace HALKEY.Pages
         public UpdateStudent()
         {
             InitializeComponent();
-            fillData();
+            
             comboFill();
+            fillData();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

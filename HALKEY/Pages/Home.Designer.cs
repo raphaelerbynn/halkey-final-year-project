@@ -34,12 +34,10 @@
             this.dashBtn = new System.Windows.Forms.Button();
             this.stntBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.PictureBox();
-            this.maxBtn = new System.Windows.Forms.PictureBox();
             this.minBtn = new System.Windows.Forms.PictureBox();
             this.bodyPanel = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +48,6 @@
             this.menuPanel.Controls.Add(this.dashBtn);
             this.menuPanel.Controls.Add(this.stntBtn);
             this.menuPanel.Controls.Add(this.closeBtn);
-            this.menuPanel.Controls.Add(this.maxBtn);
             this.menuPanel.Controls.Add(this.minBtn);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
@@ -137,21 +134,10 @@
             this.closeBtn.TabStop = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // maxBtn
-            // 
-            this.maxBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.maxBtn.Location = new System.Drawing.Point(888, 3);
-            this.maxBtn.Name = "maxBtn";
-            this.maxBtn.Size = new System.Drawing.Size(21, 24);
-            this.maxBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.maxBtn.TabIndex = 1;
-            this.maxBtn.TabStop = false;
-            this.maxBtn.Click += new System.EventHandler(this.maxBtn_Click);
-            // 
             // minBtn
             // 
             this.minBtn.Image = global::HALKEY.Properties.Resources.controls;
-            this.minBtn.Location = new System.Drawing.Point(864, 3);
+            this.minBtn.Location = new System.Drawing.Point(885, 3);
             this.minBtn.Name = "minBtn";
             this.minBtn.Size = new System.Drawing.Size(21, 24);
             this.minBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,7 +166,6 @@
             this.Text = "Home";
             this.menuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).EndInit();
             this.ResumeLayout(false);
 
@@ -195,7 +180,6 @@
         private Button dashBtn;
         private Button stntBtn;
         private PictureBox closeBtn;
-        private PictureBox maxBtn;
         private PictureBox minBtn;
     }
 }

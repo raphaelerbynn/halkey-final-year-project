@@ -255,8 +255,23 @@ namespace HALKEY.Pages
                 }
             }
         }
-        
 
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                (roomDV.DataSource as DataTable).DefaultView.RowFilter = string.Format("room_id LIKE '%{0}%'", searchTb.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search Again");
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            clearFeild();
+        }
     }
 }
