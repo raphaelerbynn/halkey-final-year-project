@@ -35,9 +35,7 @@ namespace HALKEY.Pages
             roomDV.Columns["status"].DisplayIndex = 4;
             roomDV.Columns["date"].DisplayIndex = 5;
             roomDV.Columns["delete"].DisplayIndex = 6;
-
-            
-
+            roomDV.Columns["view"].DisplayIndex = 7;
         }
 
         private void addStudentLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -16,6 +16,7 @@ namespace HALKEY.Pages
         SqlConnection conn = new SqlConnection(DbConn.connString);
         SqlCommand cmd;
         string query;
+        string room;
         string id = StudentModule.id;
         byte[] imgByte;
 
@@ -55,6 +56,7 @@ namespace HALKEY.Pages
                     genderCb.SelectedItem = reader["gender"].ToString();
                     categoryCb.SelectedItem = reader["category"].ToString();
                     roomCb.SelectedItem = reader["room_id"].ToString();
+                    room = reader["room_id"].ToString();
 
                     if (!DBNull.Value.Equals(reader["passport_pic"]))
                     {
@@ -78,59 +80,87 @@ namespace HALKEY.Pages
             }
         }
 
+        private string[] getRoomCapacity()
+        {
+            string[] count = new string[2];
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE room_id='" + roomCb.Text + "'", conn);
+                count[0] = cmd.ExecuteScalar().ToString();
+
+                cmd = new SqlCommand("SELECT capacity FROM ROOM WHERE room_id='" + roomCb.Text + "'", conn);
+                count[1] = cmd.ExecuteScalar().ToString();
+
+                conn.Close();
+            }
+            catch { conn.Close(); }
+
+            return count;
+        }
+
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            string message = "Do you want to update this student data?";
-            MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, "", deleteAction);
-            if (result == DialogResult.Yes)
+            if (int.Parse(getRoomCapacity()[0]) < int.Parse(getRoomCapacity()[1]) || room.Equals(roomCb.Text))
             {
-                try
+                string message = "Do you want to update this student data?";
+                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, "", deleteAction);
+                if (result == DialogResult.Yes)
                 {
-                    if (imgByte == null)
+                    try
                     {
-                        using (MemoryStream ms = new MemoryStream())
+                        if (imgByte == null)
                         {
-                            passportPic.Image.Save(ms, passportPic.Image.RawFormat);
-                            imgByte = ms.ToArray();
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                passportPic.Image.Save(ms, passportPic.Image.RawFormat);
+                                imgByte = ms.ToArray();
+                            }
                         }
+
+                        string query0 = "UPDATE Student SET " +
+                            "fname = '" + fnameTb.Text + "'," +
+                            "mname = '" + mnameTb.Text + "'," +
+                            "lname = '" + snameTb.Text + "'," +
+                            "contact = '" + contactTb.Text + "'," +
+                            "emergency_contact = '" + emergencyTb.Text + "'," +
+                            "programme = '" + programTb.Text + "'," +
+
+                            "level = '" + levelCb.Text + "'," +
+                            "gender = '" + genderCb.Text + "'," +
+                            "category = '" + categoryCb.Text + "'," +
+                            "room_id = '" + roomCb.Text + "' " +
+                            " WHERE student_id = '" + idTb.Text + "' ";
+
+                        string query1 = "UPDATE Student SET passport_pic=@img WHERE student_id = '" + idTb.Text + "'";
+
+                        conn.Open();
+                        cmd = new SqlCommand(query0, conn);
+                        cmd.Parameters.AddWithValue("@img", imgByte);
+                        cmd.ExecuteNonQuery();
+
+
+
+                        cmd = new SqlCommand(query1, conn);
+                        cmd.Parameters.AddWithValue("@img", imgByte);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+
+                        MessageBox.Show("Updates successfully!!!");
+
                     }
-
-                    string query0 = "UPDATE Student SET " +
-                        "fname = '" + fnameTb.Text + "'," +
-                        "mname = '" + mnameTb.Text + "'," +
-                        "lname = '" + snameTb.Text + "'," +
-                        "contact = '" + contactTb.Text + "'," +
-                        "emergency_contact = '" + emergencyTb.Text + "'," +
-                        "programme = '" + programTb.Text + "'," +
-
-                        "level = '" + levelCb.Text + "'," +
-                        "gender = '" + genderCb.Text + "'," +
-                        "category = '" + categoryCb.Text + "'," +
-                        "room_id = '" + roomCb.Text + "' " +
-                        " WHERE student_id = '" + idTb.Text + "' ";
-
-                    string query1 = "UPDATE Student SET passport_pic=@img WHERE student_id = '" + idTb.Text + "'";
-
-                    conn.Open();
-                    cmd = new SqlCommand(query0, conn);
-                    cmd.Parameters.AddWithValue("@img", imgByte);
-                    cmd.ExecuteNonQuery();
-                    
-
-                    
-                    cmd = new SqlCommand(query1, conn);
-                    cmd.Parameters.AddWithValue("@img", imgByte);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-                    MessageBox.Show("Updates successfully!!!");
-
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+
+            }
+            else
+            {
+                MessageBox.Show("The selected Room is full", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -27,6 +27,7 @@ namespace HALKEY.Pages
         }
                 
 
+
         private void getProfileDetails()
         {
             try

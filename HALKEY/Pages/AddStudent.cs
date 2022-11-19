@@ -27,6 +27,26 @@ namespace HALKEY.Pages
 
         }
 
+        private string[] getRoomCapacity()
+        {
+            string[] count = new string[2];
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE room_id='"+roomCb.Text+"'", conn);
+                count[0] = cmd.ExecuteScalar().ToString();
+                
+                cmd = new SqlCommand("SELECT capacity FROM ROOM WHERE room_id='"+roomCb.Text+"'", conn);
+                count[1] = cmd.ExecuteScalar().ToString();
+
+                conn.Close();
+            }
+            catch { conn.Close(); }
+
+            return count;
+        }
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
@@ -80,68 +100,74 @@ namespace HALKEY.Pages
                 String.IsNullOrWhiteSpace(emergencyTb.Text) |
                 String.IsNullOrWhiteSpace(programTb.Text)))
             {
-                
-                
-                try
+                if (int.Parse(getRoomCapacity()[0]) < int.Parse(getRoomCapacity()[1]))
                 {
-                    string middle_name = "";
-                    string room = "";
-                    if (!String.IsNullOrEmpty(roomCb.Text))
-                    {
-                        room = roomCb.Text;
-                    }
 
-                    if (!String.IsNullOrWhiteSpace(mnameTb.Text))
+                    try
                     {
-                        middle_name = mnameTb.Text;
-                    }
-
-                    if (imgByte == null)
-                    {
-                        using (MemoryStream ms = new MemoryStream())
+                        string middle_name = "";
+                        string room = "";
+                        if (!String.IsNullOrEmpty(roomCb.Text))
                         {
-                            passportPic.Image.Save(ms, passportPic.Image.RawFormat);
-                            imgByte = ms.ToArray();
+                            room = roomCb.Text;
+                        }
+
+                        if (!String.IsNullOrWhiteSpace(mnameTb.Text))
+                        {
+                            middle_name = mnameTb.Text;
+                        }
+
+                        if (imgByte == null)
+                        {
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                passportPic.Image.Save(ms, passportPic.Image.RawFormat);
+                                imgByte = ms.ToArray();
+                            }
+                        }
+                        //System.Diagnostics.Debug.WriteLine(Encoding.Default.GetString(imgByte));
+                        conn.Open();
+                        string query = "INSERT INTO Student VALUES(@student_id, @fname, @mname, @lname, @gender, " + "@contact, " +
+                            "@emergency_contact, @programme, @category, @level, @passport_pic, @date_registered," +
+                            " @room_id)";
+
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@student_id", idTb.Text);
+                        cmd.Parameters.AddWithValue("@fname", fnameTb.Text);
+                        cmd.Parameters.AddWithValue("@mname", middle_name);
+                        cmd.Parameters.AddWithValue("@lname", snameTb.Text);
+                        cmd.Parameters.AddWithValue("@gender", genderCb.Text);
+                        cmd.Parameters.AddWithValue("@contact", contactTb.Text);
+                        cmd.Parameters.AddWithValue("@emergency_contact", emergencyTb.Text);
+                        cmd.Parameters.AddWithValue("@programme", programTb.Text);
+                        cmd.Parameters.AddWithValue("@category", categoryCb.Text);
+                        cmd.Parameters.AddWithValue("@level", levelCb.Text);
+                        cmd.Parameters.AddWithValue("@passport_pic", imgByte);
+                        cmd.Parameters.AddWithValue("@date_registered", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@room_id", room);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data saved successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clearFeild();
+
+                        conn.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+
+                        conn.Close();
+                        if (ex.Message.Contains("Violation of PRIMARY KEY"))
+                        {
+                            MessageBox.Show("ID of student already exist", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show(ex.ToString());
                         }
                     }
-                    //System.Diagnostics.Debug.WriteLine(Encoding.Default.GetString(imgByte));
-                    conn.Open();
-                    string query = "INSERT INTO Student VALUES(@student_id, @fname, @mname, @lname, @gender, " + "@contact, "+
-                        "@emergency_contact, @programme, @category, @level, @passport_pic, @date_registered," +
-                        " @room_id)";
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@student_id", idTb.Text);
-                    cmd.Parameters.AddWithValue("@fname", fnameTb.Text);
-                    cmd.Parameters.AddWithValue("@mname", middle_name);
-                    cmd.Parameters.AddWithValue("@lname", snameTb.Text);
-                    cmd.Parameters.AddWithValue("@gender", genderCb.Text);
-                    cmd.Parameters.AddWithValue("@contact", contactTb.Text);
-                    cmd.Parameters.AddWithValue("@emergency_contact", emergencyTb.Text);
-                    cmd.Parameters.AddWithValue("@programme", programTb.Text);
-                    cmd.Parameters.AddWithValue("@category", categoryCb.Text);
-                    cmd.Parameters.AddWithValue("@level", levelCb.Text);
-                    cmd.Parameters.AddWithValue("@passport_pic", imgByte);
-                    cmd.Parameters.AddWithValue("@date_registered", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@room_id", room);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data saved successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearFeild();
-                    
-                    conn.Close();
                 }
-                catch (SqlException ex)
+                else
                 {
-
-                    conn.Close();
-                    if(ex.Message.Contains("Violation of PRIMARY KEY"))
-                    {
-                        MessageBox.Show("ID of student already exist", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
+                    MessageBox.Show("The selected Room is full", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
