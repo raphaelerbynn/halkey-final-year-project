@@ -27,7 +27,12 @@ namespace HALKEY.Pages
 
         private void clearFeild()
         {
+            problemTb.Text = null;
+            issueTb.Text = null;
+            roomTb.Text = null;
+            membersCb.SelectedIndex = -1;
 
+            membersCb.Enabled = false;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
