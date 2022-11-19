@@ -23,7 +23,7 @@ namespace HALKEY.Pages
             getProfileDetails();
             totalUpdate();
             unresovedReport();
-            System.Diagnostics.Debug.WriteLine(string.Join(",", issues));
+            MessageBox.Show(string.Join(",", issues));
         }
                 
 
@@ -70,24 +70,45 @@ namespace HALKEY.Pages
 
         private void unresovedReport()
         {
-            for(int i=0; i < 7; i++)
+            for (int i = 0; i < 7; i++)
             {
-                foreach(Control c in reportPanel.Controls)
+                foreach (Control c in reportPanel.Controls)
                 {
-                    if(c is Label && c.Tag != null)
+                    if (c is Label && c.Tag != null)
                     {
-                        if(int.Parse(c.Tag?.ToString()) == i)
+                        if (int.Parse(c.Tag?.ToString()) == i)
                         {
-                            c.Text = "------";
+                            ((Label)c).Text = "------";
+                            if (i < issues.Count)
+                            {
+                                ((Label)c).Text = issues[i];
+                            }
                         }
 
-                        if(i < issues.Count)
-                        {
-                            c.Text = issues[i];
-                        }
+                        
                     }
                 }
             }
+
+            /*for (int i = 1; i <= capacity * 2; i++)
+            {
+                int a = 0;
+                foreach (Control c in viewPanel.Controls)
+                {
+                    try
+                    {
+                        if (c.Tag != null)
+                        {
+                            if (int.Parse(c.Tag?.ToString()) == i)
+                            {
+
+                                if (c is Label)
+                                {
+                                    if (i <= roomMembers.Count)
+                                    {
+                                        ((Label)c).Text = roomMembers[i - 1].ToString();
+                                        a++;
+                                    }*/
         }
 
         private void totalUpdate()
@@ -127,10 +148,11 @@ namespace HALKEY.Pages
                 cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE category='POSTGRADUATE'", conn);
                 postgradLbl.Text = cmd.ExecuteScalar().ToString();
                 
-                cmd = new SqlCommand("SELECT problem FROM Report WHERE status='UNSOLVED' LIMIT 6", conn);
+                cmd = new SqlCommand("SELECT problem FROM Report WHERE status='UNSOLVED' ORDER BY date", conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    //MessageBox.Show(reader["problem"].ToString());
                     issues.Add(reader["problem"].ToString());
                 }
                 reader.Close();
