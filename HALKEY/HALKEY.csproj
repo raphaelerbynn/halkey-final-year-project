@@ -18,16 +18,16 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <AssemblyName>HALKEY</AssemblyName>
     <RootNamespace>HALKEY</RootNamespace>
-    <ApplicationIcon>halkey_logo.ico</ApplicationIcon>
+    <ApplicationIcon>settings-Recovered-Recovered.ico</ApplicationIcon>
     <Copyright>Copyright 2022</Copyright>
-    <PackageIcon>halkey_icon.png</PackageIcon>
+    <PackageIcon>lockup-colour.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/raphaelerbynn/halkey-final-year-project</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="halkey_logo.ico" />
+    <Content Include="settings-Recovered-Recovered.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,7 +35,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\..\Photoshop\PerfectSch\halkey_icon.png">
+    <None Include="C:\Users\MOUNTAIN\Desktop\lockup-colour.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -46,11 +46,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="HalkeyDbDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>HalkeyDbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -71,10 +66,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="HalkeyDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HalkeyDbDataSet.Designer.cs</LastGenOutput>
-    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

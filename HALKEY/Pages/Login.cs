@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,8 @@ namespace HALKEY
             InitializeComponent();
             bgPanel.BackColor = ColorTranslator.FromHtml(Colors.bgLight);
             loginBtn.BackColor = ColorTranslator.FromHtml(Colors.buttonDark);
+
+            //MessageBox.Show(Dns.GetHostName());
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -56,7 +59,7 @@ namespace HALKEY
                 while (reader.Read())
                 {
                     if ((usrname.Equals(reader["username"].ToString()) && pwd.Equals(reader["password"].ToString())))
-                    { 
+                    {
                         value = true;
                         username = usernameTb.Text;
                     }
@@ -65,9 +68,14 @@ namespace HALKEY
 
                 conn.Close();
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Put database in path: " + Directory.GetCurrentDirectory());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
             return value;

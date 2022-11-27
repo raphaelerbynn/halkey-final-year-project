@@ -32,14 +32,22 @@ namespace HALKEY.Pages
             string[] count = new string[2];
             try
             {
+                
                 conn.Open();
 
                 SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Student WHERE room_id='"+roomCb.Text+"'", conn);
                 count[0] = cmd.ExecuteScalar().ToString();
-                
-                cmd = new SqlCommand("SELECT capacity FROM ROOM WHERE room_id='"+roomCb.Text+"'", conn);
-                count[1] = cmd.ExecuteScalar().ToString();
 
+                if (!String.IsNullOrEmpty(roomCb.Text))
+                {
+                    cmd = new SqlCommand("SELECT capacity FROM ROOM WHERE room_id='" + roomCb.Text + "'", conn);
+                    count[1] = cmd.ExecuteScalar().ToString();
+                }
+                else
+                {
+                    count[0] = "-1";
+                    count[1] = "0";
+                }
                 conn.Close();
             }
             catch { conn.Close(); }
